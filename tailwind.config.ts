@@ -12,12 +12,12 @@ export default {
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
-			'gradient-color-1': 'hsl(var(--gradient-one))',
-			'gradient-color-2': 'hsl(var(--gradient-two))',
-			'gradient-color-3': 'hsl(var(--gradient-three))',
-			'gradient-color-4': 'hsl(var(--gradient-fout))',
-			'gradient-color-5': 'hsl(var(--gradient-five))',
-			'gradient-color-6': 'hsl(var(--gradient-six))',
+  			'gradient-color-1': 'hsl(var(--gradient-one))',
+  			'gradient-color-2': 'hsl(var(--gradient-two))',
+  			'gradient-color-3': 'hsl(var(--gradient-three))',
+  			'gradient-color-4': 'hsl(var(--gradient-fout))',
+  			'gradient-color-5': 'hsl(var(--gradient-five))',
+  			'gradient-color-6': 'hsl(var(--gradient-six))',
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
@@ -28,14 +28,14 @@ export default {
   			},
   			primary: {
   				DEFAULT: 'hsl(var(--primary-default))',
-				dark: 'hsl(var(--primary-dark))',
-				light: 'hsl(var(--primary-light))',
+  				dark: 'hsl(var(--primary-dark))',
+  				light: 'hsl(var(--primary-light))',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary-default))',
   				dark: 'hsl(var(--secondary-dark))',
-				light: 'hsl(var(--secondary-light))',
+  				light: 'hsl(var(--secondary-light))',
   				foreground: 'hsl(var(--secondary-foreground))'
   			},
   			muted: {
@@ -50,8 +50,8 @@ export default {
   				DEFAULT: 'hsl(var(--destructive))',
   				foreground: 'hsl(var(--destructive-foreground))'
   			},
-			primarybuttonborder: 'hsl(var(--primary-button-border))',
-			secondarybuttonborder: 'hsl(var(--secondary-button-border))',
+  			primarybuttonborder: 'hsl(var(--primary-button-border))',
+  			secondarybuttonborder: 'hsl(var(--secondary-button-border))',
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
@@ -68,9 +68,31 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-		backgroundImage: {
-			'hero-section-gradient': 'linear-gradient(160.18deg, #FFC000 -2.11%, #D7C221 9.69%, #C1C433 17.86%, #02CFCF 88.64%)',
-		},
+  		backgroundImage: {
+  			'hero-section-gradient': 'linear-gradient(160.18deg, #FFC000 -2.11%, #D7C221 9.69%, #C1C433 17.86%, #02CFCF 88.64%)'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		}
   	}
   },
   plugins: [require("tailwindcss-animate")],

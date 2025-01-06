@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-gradient-color-1 to-gradient-color-2 text-white py-12">
+    <footer className="bg-gradient-to-b from-gradient-color-1 to-gradient-color-2 text-white py-6 md:py-12">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 px-4 md:px-8 md:min-h-80">
         {/* Column 1 */}
         <div className="md:col-span-2 space-y-4 px-8">
@@ -29,7 +29,7 @@ export const Footer = () => {
         </div>
 
         {/* Column 2 */}
-        <div>
+        <div className="px-8 md:px-0">
           <h3 className="font-bold text-lg mb-4">Our Services</h3>
           <ul className="space-y-2">
             <li>
@@ -71,7 +71,7 @@ export const Footer = () => {
         </div>
 
         {/* Column 3 */}
-        <div>
+        <div className="px-8 md:px-0">
           <h3 className="font-bold text-lg mb-4">Company</h3>
           <ul className="space-y-2">
             <li>
@@ -103,7 +103,7 @@ export const Footer = () => {
         </div>
 
         {/* Column 4 */}
-        <div>
+        <div className="px-8 md:px-0">
           <h3 className="font-bold text-lg mb-4">Support</h3>
           <ul className="space-y-2">
             <li>

@@ -17,13 +17,13 @@ const buttonVariants = cva(
           "bg-neutral-200 text-primary-foreground hover:bg-neutral-200/90 border-neutral-400 border-b-4 active:border-b-0",
 
         primary:
-          "bg-primary text-white hover:bg-primary/80 border-primarybuttonborder border-b-2 rounded-full active:border-b-0",
+          "bg-primary text-white cursor-pointer !font-bold hover:bg-primary/80 border-primarybuttonborder border-b-2 !rounded-full active:border-b-0",
 
         secondary:
-          "bg-white text-primary hover:bg-slate-100 border-secondarybuttonborder border border-b-2 rounded-full active:border",
+          "bg-white text-primary cursor-pointer !font-bold hover:bg-slate-100 border-secondarybuttonborder border border-b-2 !rounded-full active:border",
 
         danger:
-          "bg-rose-500 text-primary-foreground hover:bg-rose-500/90 border-rose-600 border-b-4 active:border-b-0",
+          "bg-rose-500 cursor-pointer text-primary-foreground hover:bg-rose-500/90 border-rose-600 border-b-4 active:border-b-0",
 
 
         super:

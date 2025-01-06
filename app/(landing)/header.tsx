@@ -39,66 +39,66 @@ export const Header = () => {
         </div>
 
         {/* Navigation links */}
-        <nav className="hidden lg:flex flex-grow items-center justify-between space-x-6">
-            <div className="ml-20 flex space-x-7 items-center">
-                <Link href={""} className="font-semibold">
-                    How it works
-                </Link>
-                <DropdownMenu>
-                    <DropdownMenuTrigger className="flex items-center space-x-4 font-semibold text-black">
-                        Our Services
-                        <ChevronDown />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="min-w-[200px]">
-                        <DropdownMenuLabel>
-                            LinguaMura Education
-                        </DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>
-                            LinguaMura Health
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>
-                            LinguaMura Housing
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>
-                            LinguaMura Marketplace
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>
-                            LinguaMura Travel
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>
-                            LinguaMura Entertainment
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>
-                            LinguaMura Communities
-                        </DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
-            </div>
-            <div className="flex items-center">
-                <div className="flex items-center">
-                    <Image src="/icons/intl.svg" alt="Icon" width={20} height={20} />
-                    <Select>
-                        <SelectTrigger className="w-[100px] border-none ring-none">
-                            <SelectValue placeholder="English" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="en">English</SelectItem>
-                        </SelectContent>
-                    </Select>
-                </div>
-                <Link href={""} className={`${buttonVariants({ variant: "secondary", size: "lg" })} mr-2`}>
-                    Log in
-                </Link>
-                <Link href={""} className={buttonVariants({ variant: "primary", size: "lg" })}>
-                    Sign up for free
-                </Link>
-            </div>
+        <nav className="hidden lg:flex flex-grow items-center justify-between">
+          <div className="ml-20 flex space-x-7 items-center">
+            <Link href={""} className="font-semibold hover:text-primary transition-all">
+                How it works
+            </Link>
+            <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center space-x-4 font-semibold text-black">
+                    Our Services
+                    <ChevronDown />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="min-w-[200px]">
+                    <DropdownMenuLabel>
+                        LinguaMura Education
+                    </DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                        LinguaMura Health
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                        LinguaMura Housing
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                        LinguaMura Marketplace
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                        LinguaMura Travel
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                        LinguaMura Entertainment
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem>
+                        LinguaMura Communities
+                    </DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+          <div className="flex items-center">
+              <div className="flex items-center mr-7">
+                <Image src="/icons/intl.svg" alt="Icon" width={20} height={20} />
+                <Select>
+                    <SelectTrigger className="w-[100px] border-none ring-none">
+                        <SelectValue placeholder="English" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectItem value="en">English</SelectItem>
+                    </SelectContent>
+                </Select>
+              </div>
+              <Link href={""} className={`${buttonVariants({ variant: "secondary", size: "lg" })} w-40 mr-2`}>
+                Log in
+              </Link>
+              <Link href={""} className={buttonVariants({ variant: "primary", size: "lg" })}>
+                  Sign up for free
+              </Link>
+          </div>
         </nav>
 
         {/* Hamburger Menu */}
