@@ -12,19 +12,23 @@ import {
 // Sample FAQ data
 const faqData = [
   {
-    question: "What is ShadCN UI?",
+    question: "What languages does LinguaMura offer for learning?",
     answer: "ShadCN UI is a modern UI toolkit for building React components with Radix UI and Tailwind CSS."
   },
   {
-    question: "How do I install it?",
+    question: "Can I customize my learning plan on LinguaMura?",
     answer: "You can install it using npm or yarn: `npm install @radix-ui/react-accordion`."
   },
   {
-    question: "Is it customizable?",
+    question: "What support is available if I need help with my lessons?",
     answer: "Yes! ShadCN UI is built with Tailwind CSS, so you can easily customize the components to fit your needs."
   },
   {
-    question: "Can I use it in Next.js?",
+    question: "How does the scholarship program work?",
+    answer: "Absolutely! ShadCN UI works seamlessly with Next.js and other React-based frameworks."
+  },
+  {
+    question: "Can I access LinguaMura on mobile devices?",
     answer: "Absolutely! ShadCN UI works seamlessly with Next.js and other React-based frameworks."
   }
 ];
@@ -52,10 +56,10 @@ const FAQSection: React.FC = () => {
         <Accordion type="multiple" className="space-y-4">
           {faqData.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`} className='border-none'>
-                <AccordionTrigger className="w-full p-4 text-lg text-black font-semibold text-left bg-primary-foreground rounded-md focus:outline-none hover:no-underline">
+                <AccordionTrigger className="w-full p-6 text-md text-black font-semibold text-left bg-primary-foreground rounded-t-md focus:outline-none hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
-              <AccordionContent className="px-4 py-2 bg-gray-50 text-gray-700 rounded-b-md">
+              <AccordionContent className="p-6 bg-gray-50 text-gray-900 rounded-b-md">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
