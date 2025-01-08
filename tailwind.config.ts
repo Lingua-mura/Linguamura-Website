@@ -53,6 +53,7 @@ export default {
   			primarybuttonborder: 'hsl(var(--primary-button-border))',
   			secondarybuttonborder: 'hsl(var(--secondary-button-border))',
   			border: 'hsl(var(--border))',
+			borderColor: "#DCDCE5",
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
   			chart: {
