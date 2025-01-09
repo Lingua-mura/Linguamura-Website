@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { VariantProps, cva } from "class-variance-authority"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, Menu } from "lucide-react"
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cn } from "@/lib/utils"
@@ -263,7 +263,7 @@ const SidebarTrigger = React.forwardRef<
   React.ElementRef<typeof Button>,
   React.ComponentProps<typeof Button>
 >(({ className, onClick, ...props }, ref) => {
-  const { open, toggleSidebar } = useSidebar()
+  const { open, isMobile, toggleSidebar } = useSidebar()
 
   return (
     <Button
@@ -278,7 +278,8 @@ const SidebarTrigger = React.forwardRef<
       }}
       {...props}
     >
-      {open? <ChevronLeft /> : <ChevronRight />}
+
+      {isMobile? <Menu /> : (open? <ChevronLeft /> : <ChevronRight />)}
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   )
@@ -500,7 +501,7 @@ SidebarMenu.displayName = "SidebarMenu"
 
 const SidebarMenuItem = React.forwardRef<
   HTMLLIElement,
-  React.ComponentProps<"li">
+  React.ComponentProps<"li"> 
 >(({ className, ...props }, ref) => (
   <li
     ref={ref}

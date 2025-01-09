@@ -1,0 +1,7 @@
+.group[data-collapsible="icon"] button[data-sidebar="menu-button"]{
+    @apply !w-full !px-4 !py-4 !h-auto;
+}
+
+.group[data-collapsible="icon"] ul[data-sidebar="menu"]{
+    @apply my-2;
+}
