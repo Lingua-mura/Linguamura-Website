@@ -37,7 +37,6 @@ export const Header = () => {
           />
           <span className="font-bold text-lg">LinguaMura</span>
         </div>
-
         {/* Navigation links */}
         <nav className="hidden lg:flex flex-grow items-center justify-between">
           <div className="ml-20 flex space-x-7 items-center">
