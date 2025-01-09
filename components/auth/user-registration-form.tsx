@@ -21,7 +21,7 @@ const UserRegistrationForm = () => {
                 label="Full Name"
                 type="text"
                 prefixIcon={<SinglePersonIcon />}
-                placeholder="Enter yout full name"
+                placeholder="Enter your full name"
             />
             <InputField 
                 label="Email"

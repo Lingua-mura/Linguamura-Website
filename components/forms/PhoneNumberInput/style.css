@@ -10,15 +10,13 @@
 }
 
 .PhoneInput .PhoneInputCountry{
-  @apply bg-slate-200 rounded-s-full;
-  padding: 1rem;
+  @apply bg-slate-200 rounded-s-full p-3;
 }
 
 .PhoneInput .PhoneInputInput {
-  @apply rounded-e-full;
+  @apply rounded-e-full py-3;
   border: none;
   outline: none; 
-  padding-block: 1rem;
 }
 
 .PhoneInputInput{

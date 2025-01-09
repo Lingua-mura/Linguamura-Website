@@ -1,8 +1,5 @@
 // (auth)/user/get-started.tsx
-"use client";
-
 import Image from "next/image";
-import Link from "next/link";
 import UserLoginForm from "@/components/auth/user-login-form";
 
 const SignIn = () => {

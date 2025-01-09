@@ -23,8 +23,6 @@ const DatePickerField = ({
   bordered = true,
   onDateChange,
 }: DatePickerFieldProps) => {
-//   const { control, formState: { errors } } = useFormContext();
-//   const error = get(errors, name);
 
   return (
     <div className="mt-5">
@@ -34,41 +32,11 @@ const DatePickerField = ({
         </Label>
       )}
       <div className={bordered ? "" : "no-border"}>
-        {/* <Controller
-          name={name}
-          control={control}
-          rules={{
-            required: required ? "This field is required" : false,
-            validate: (value) => {
-              if (minDate && value && value < minDate) {
-                return `Date cannot be before ${minDate.toLocaleDateString()}`;
-              }
-              if (maxDate && value && value > maxDate) {
-                return `Date cannot be after ${maxDate.toLocaleDateString()}`;
-              }
-              return true;
-            },
-          }}
-          render={({ field: { onChange, value } }) => (
-            <> */}
-              <DatePicker
-                // value={value ?? selectedDate}
-                // onDateChange={(date) => {
-                //   setSelectedDate(date);
-                //   onChange(date); // Update the form state with the selected date
-                //   if (onDateChange) {
-                //     onDateChange(date); // Optional callback for date change
-                //   }
-                // }}
-                // placeholder={placeholder}
-                startYear={minDate ? minDate.getFullYear() - 100 : undefined}
-                endYear={maxDate ? maxDate.getFullYear() + 100 : undefined}
-              />
-            {/* </>
-          )}
-        /> */}
+        <DatePicker
+          startYear={minDate ? minDate.getFullYear() - 100 : undefined}
+          endYear={maxDate ? maxDate.getFullYear() + 100 : undefined}
+        />
       </div>
-      {/* {error && <div className="input-err-msg pt-2 text-red-600">{error.message}</div>} */}
     </div>
   );
 };

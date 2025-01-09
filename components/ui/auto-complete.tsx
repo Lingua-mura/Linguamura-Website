@@ -3,7 +3,6 @@
 import * as React from "react"
 import { Check, ChevronsUpDown } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
 import {
   Command,
   CommandEmpty,
@@ -26,9 +25,9 @@ interface Option {
 }
 
 interface AutoCompleteProps {
-  options: Option[] // The list of options for the combobox
+  options: Option[]
   value: string      
-  onValueChange: (value: string) => void // Callback when an option is selected
+  onValueChange: (value: string) => void
 }
 
 export function AutoComplete({
@@ -36,7 +35,7 @@ export function AutoComplete({
   value,
   onValueChange,
 }: AutoCompleteProps) {
-  const [open, setOpen] = React.useState<boolean>(false) // Popover open state
+  const [open, setOpen] = React.useState<boolean>(false)
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -46,7 +45,6 @@ export function AutoComplete({
             Country of Residence
           </Label>
           <div className={`form-group bg-slate-100 mt-1 p-2 rounded-md`}>
-            {/* Display the current selected value or default text */}
             {value
               ? options.find((option) => option.value === value)?.label
               : "Select option..."}
