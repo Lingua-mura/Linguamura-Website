@@ -65,7 +65,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
             className="select-none icon-btn -mr-1"
             onClick={() => setShowPassword(!showPassword)}
           >
-            {showPassword ? <Eye className="text-gray-100" /> : <EyeOff className="text-gray-100" />}
+            {showPassword ? <EyeOff /> : <Eye />}
           </button>
         )}
       </div>

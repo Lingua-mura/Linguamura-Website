@@ -55,8 +55,8 @@
   text-align: right;
 }
 
-.MuiAutocomplete-input {
-  padding: 0 7.5px !important;
+[data-state="open"] .form-group {
+  @apply border-primary
 }
 
 .select-mui {

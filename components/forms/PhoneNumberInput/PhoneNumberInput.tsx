@@ -30,7 +30,7 @@ const PhoneNumberInput: React.FC<PhoneNumberInputProps> = ({label = "Phone Numbe
         } `}
       > */}
       <div
-        className={`mt-[5px]  p-4 border-[1.5px] border-borderColor rounded-[0.75rem] focus-within:border-primary`}
+        className={`mt-[5px] border-[1.5px] border-borderColor rounded-full focus-within:border-primary`}
       >
         <PhoneInput
           international

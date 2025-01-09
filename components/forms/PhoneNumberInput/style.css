@@ -1,6 +1,28 @@
+:root{
+  --PhoneInputCountrySelectArrow-width: .5em;
+  --PhoneInputCountrySelect-marginRight: .9em;
+  --PhoneInputCountrySelectArrow-color: #000;
+  --PhoneInputCountrySelectArrow-borderWidth: 1.5px;
+}
+
+.PhoneInput{
+  @apply bg-slate-100 rounded-full;
+}
+
+.PhoneInput .PhoneInputCountry{
+  @apply bg-slate-200 rounded-s-full;
+  padding: 1rem;
+}
+
 .PhoneInput .PhoneInputInput {
+  @apply rounded-e-full;
   border: none;
   outline: none; 
+  padding-block: 1rem;
+}
+
+.PhoneInputInput{
+  @apply bg-slate-100;
 }
 
 .PhoneInput .PhoneInputInput:focus,
