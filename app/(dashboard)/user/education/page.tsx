@@ -6,7 +6,7 @@ const categories = [
         title: "Languages",
         description: "Plan your next trip or commute with our transportation features",
         imageSrc: "/images/books.png",
-        href: "/languages",
+        href: "/user/education/setup",
     },
     {
         title: "Courses",
