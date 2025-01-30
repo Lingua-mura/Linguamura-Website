@@ -224,8 +224,8 @@ export default function Questionnaire() {
       ) : (
         <CompletionScreen 
           answers={answers} 
-          onStartStudyPlan={() => router.push('/user/education/setup')}
-          onNotNow={() => router.push('/user')}
+          onStartStudyPlan={() => router.push('/user/education/study-plan')}
+          onNotNow={() => router.push('/user/education')}
         />
       )}
     </div>
