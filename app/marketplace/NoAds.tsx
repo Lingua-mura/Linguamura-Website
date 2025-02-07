@@ -1,4 +1,5 @@
 // components/NoAds.tsx
+import "./marketplace.css"; 
 export default function NoAds() {
     return (
         <div className="no-ads-section">

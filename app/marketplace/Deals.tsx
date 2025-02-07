@@ -1,4 +1,6 @@
-// components/Deals.tsx
+"use client"; // Mark as a Client Component
+
+import "./marketplace.css"; 
 export default function Deals() {
     return (
         <div className="p-3">
@@ -6,7 +8,7 @@ export default function Deals() {
             <div className="row mb-5">
                 <div className="col-3 col-sm-6 col-md-3">
                     <div className="card">
-                        <img src="/imgs/shoe.jpeg" className="card-img-top" alt="Nike Air Max 270" style={{ maxWidth: "100px", height: "auto" }} />
+                    <img src="/marketplace/img/shoe.jpeg" className="card-img-top" alt="Nike Air Max 270" style={{ maxWidth: "100px", height: "auto" }} />
                         <div className="heart-icon" onClick={(e) => e.currentTarget.classList.toggle('liked')}>
                             <i className="fas fa-heart"></i>
                         </div>

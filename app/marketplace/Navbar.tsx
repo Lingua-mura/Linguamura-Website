@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import "./marketplace.css"; 
 export default function Navbar() {
     return (
         <nav className="navbar navbar-light bg-white px-3">

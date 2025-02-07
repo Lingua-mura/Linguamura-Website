@@ -1,4 +1,5 @@
 // components/SearchBar.tsx
+import "./marketplace.css"; 
 export default function SearchBar() {
     return (
         <div className="search-container">

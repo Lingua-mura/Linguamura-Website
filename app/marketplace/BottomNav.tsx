@@ -1,6 +1,8 @@
 // components/BottomNav.tsx
+import "./marketplace.css";
 export default function BottomNav() {
     return (
+        
         <nav className="navbar fixed-bottom navbar-light bg-white border-top mt-5">
             <div className="container d-flex justify-content-around">
                 <a href="#" className="text-dark text-center"><i className="fas fa-home"></i><br />Home</a>

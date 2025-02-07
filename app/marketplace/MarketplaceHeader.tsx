@@ -1,4 +1,5 @@
 // components/MarketplaceHeader.tsx
+import "./marketplace.css"; 
 export default function MarketplaceHeader() {
     return (
         <div className="p-3 text-white" style={{ backgroundColor: "#00A6A6" }}>
