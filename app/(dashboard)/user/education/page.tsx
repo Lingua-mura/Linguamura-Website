@@ -1,3 +1,4 @@
+import AdsHeader from "@/components/custom/ads/header";
 import { CategoryCard } from "@/components/custom/catalogue/edu-catalogue-card";
 import { Button } from "@/components/ui/button";
 
@@ -6,13 +7,13 @@ const categories = [
         title: "Languages",
         description: "Plan your next trip or commute with our transportation features",
         imageSrc: "/images/books.png",
-        href: "/user/education/setup",
+        href: "/user/education/languages",
     },
     {
         title: "Courses",
         description: "Plan your next trip or commute with our transportation features",
         imageSrc: "/images/people-learning.png",
-        href: "/courses",
+        href: "/user/education/courses",
     },
     {
         title: "Music & Arts",
@@ -25,9 +26,7 @@ const categories = [
 export default function Page() {
     return (
         <>
-            <div className="w-full h-[119px] bg-[#fff9e5] flex justify-center items-center">
-                No Ads yet..
-            </div>
+            <AdsHeader />
 
             <div className="w-11/12 mx-auto">
                 <div className="my-8 ">
