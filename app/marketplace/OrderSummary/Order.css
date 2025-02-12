@@ -1,0 +1,58 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+.container {
+    max-width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.card-section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+.section-title {
+    font-weight: bold;
+    color: black;
+    border-bottom: 3px solid #d3d3d3;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.total {
+    font-weight: bold;
+}
+.btn-confirm {
+    background-color: #00c6ff;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+}
+.fa-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text-primary {
+    color: #00c6ff !important;
+}
+.change-link {
+    float: right;
+    color: #00c6ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+.change-link::after {
+    content: ">";
+    margin-right: 5px;
+    padding-left: 5px;
+}
+.form-check-label {
+    color: #00c6ff !important;
+    font-weight: bold;
+}

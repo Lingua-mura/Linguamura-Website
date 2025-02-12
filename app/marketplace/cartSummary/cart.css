@@ -1,0 +1,107 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coin-badge {
+    font-size: 18px;
+}
+
+.cart-summary {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product img {
+    width: 60px;
+    border-radius: 5px;
+}
+
+.product-info {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.low-stock {
+    color: red;
+    font-size: 14px;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.quantity-control button {
+    border: none;
+    background: #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.checkout-btn {
+    background-color: #17c3b2;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    background: #fff;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.old-price {
+    color: gray;
+}
+
+.discount {
+    background: #D4F4E9;
+    color: #00875A;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.heart-icon {
+    cursor: pointer;
+    color: #7a7777;
+    float: right;
+}
+
+
+
+
+.heart-icon.liked {
+    color: #e74c3c;
+}
