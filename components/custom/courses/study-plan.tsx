@@ -25,7 +25,7 @@ export interface UserLanguagePreferences {
   timeTarget: string;
 }
 
-export default function Questionnaire() {
+export default function Questionnaire({ url = '/education' }: { url?: string }) {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<number, string>>({});
@@ -116,8 +116,8 @@ export default function Questionnaire() {
       ) : (
         <CompletionScreen 
           answers={answers} 
-          onStartStudyPlan={() => router.push('/user/courses/study-plan')}
-          onNotNow={() => router.push('/user/courses')}
+          onStartStudyPlan={() => router.push(url)}
+          onNotNow={() => router.back()}
         />
       )}
     </div>
