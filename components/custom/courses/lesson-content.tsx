@@ -4,11 +4,37 @@ import { useState } from "react"
 import Image from "next/image"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import type { Tab } from "@/types/lesson"
+import { QuestionsTab } from "./question-tab"
 
 const tabs: Tab[] = [
   { id: "overview", label: "Overview" },
   { id: "transcript", label: "Transcript" },
   { id: "questions", label: "Questions" },
+]
+
+const comments = [
+  {
+    id: '1',
+    author: {
+      name: 'Tolumi Kanthe',
+      avatar: '/placeholder.svg'
+    },
+    content: 'There is no "proper" way. True understanding of the concept (doing by decimals) means you can look at the problem in more than one way and select the most appropriate. Rhadion is not suggesting his way is "better". It\'s different. It\'s worth considering. I would also be interested to see a video where this alternative way of tackling the problem was explored. I echo Rhadion\'s question - is there one?',
+    timestamp: '3 months ago',
+    likes: 4,
+    commentCount: 4
+  },
+  {
+    id: '2',
+    author: {
+      name: 'Jennifer Blaise',
+      avatar: '/placeholder.svg'
+    },
+    content: 'There is no "proper" way. True understanding of the concept (doing by decimals) means you can look at the problem in more than one way and select the most appropriate. Rhadion is not suggesting his way is "better". It\'s different. It\'s worth considering. I would also be interested to see a video where this alternative way of tackling the problem was explored. I echo Rhadion\'s question - is there one?',
+    timestamp: '4 months ago',
+    likes: 4,
+    commentCount: 4
+  }
 ]
 
 export function LessonContent() {
@@ -48,7 +74,7 @@ export function LessonContent() {
             <p className="text-muted-foreground">Transcript content goes here...</p>
           </TabsContent>
           <TabsContent value="questions">
-            <p className="text-muted-foreground">Questions content goes here...</p>
+            <QuestionsTab comments={comments} />
           </TabsContent>
         </Tabs>
       </div>

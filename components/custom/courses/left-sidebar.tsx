@@ -1,12 +1,17 @@
 import { Lock, PlayCircle, FileText, CheckCircle, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { LessonItem } from "@/types/lesson"
+import { QuizCard } from "./quiz-card"
+import { usePathname, useRouter } from "next/navigation"
 
 interface CourseSidebarProps {
   lessons: LessonItem[]
 }
 
 export function CourseSidebar({ lessons }: CourseSidebarProps) {
+
+  const urlPath = usePathname()
+  const router = useRouter()
   return (
     <div className="w-64 border-r bg-gray-50/40 h-screen overflow-y-auto">
       <div className="p-4 border-b">
@@ -37,6 +42,10 @@ export function CourseSidebar({ lessons }: CourseSidebarProps) {
             {lesson.isCompleted && <CheckCircle className="h-4 w-4 text-primary" />}
           </button>
         ))}
+        <button className="w-full flex item-start gap-3 p-2 text-sm rounded-lg" onClick={() => router.push(urlPath + '/quiz')}>
+          <Lock />
+          <div className="font-medium">Quiz</div>
+        </button>
       </nav>
     </div>
   )

@@ -6,6 +6,7 @@ import { LessonContent } from "@/components/custom/courses/lesson-content"
 import type { LessonItem } from "@/types/lesson"
 import { useEffect } from 'react'
 import { useSidebar } from "@/components/ui/sidebar"
+import AdsHeader from "@/components/custom/ads/header"
 
 
 const lessons: LessonItem[] = [
