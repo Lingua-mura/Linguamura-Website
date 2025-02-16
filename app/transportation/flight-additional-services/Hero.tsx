@@ -217,32 +217,121 @@ const Hero = () => {
 
                                     <div className='flex justify-around items-center mt-[30px] w-full'>
                                         <div className='flex flex-col w-[60%] space-y-5 items-start'>
-                                            <div className='h-[270px] flex flex-col box-border w-[100%] bg-red-500'>
+                                            <div className='h-[270px] flex flex-col box-border w-[100%] border-[#D9DBE9] border-[0.3px] p-[20px] rounded-[12px] bg-transparent'>
                                                 <p className='font-semibold'>Fight 1</p>
 
                                                 <div className='flex items-center gap-x-5'>
-                                                    <div className='h-[70px] w-[40%] bg-purple-500'>
+                                                    <div className='h-[70px] flex flex-col space-y-4 w-[40%] bg-transparent'>
                                                         <div className='flex items-center'>
                                                             <p className='m-0 p-0 text-[0.8rem]'>Uyo (QUO) -</p>
                                                             <Icon icon="majesticons:airplane-line" width="17" height="17" />
-                                                            
                                                             <p className='m-0 p-0 text-[0.8rem]'>- Lagos (LOS)</p>
                                                         </div>
 
+                                                        <div className='flex items-center'>
+                                                            <Icon icon="iconoir:timer" width="24" height="24" />
+
+                                                            <p className='m-0 p-0 text-[0.8rem]'>Departure Date: <span className='text-[#00BBBB] text-[0.7rem]'>05 Sep 2024 - 09:30</span></p>
+                                                        </div>
+
                                                     </div>
-                                                    <div className='h-[70px] w-[40%] bg-purple-500'></div>
+                                                    <div className='h-[70px] flex flex-col space-y-4 w-[40%] bg-transparent'>
+                                                        <div className='flex items-center'>
+                                                            <p className='m-0 p-0 text-[0.8rem]'>Fight No: N2-143</p>
+
+                                                        </div>
+
+                                                        <div className='flex items-center'>
+                                                            <Icon icon="iconoir:timer" width="24" height="24" />
+
+                                                            <p className='m-0 p-0 text-[0.8rem]'>Return Date: <span className='text-[#00BBBB] text-[0.7rem]'>05 Sep 2024 - 09:30</span></p>
+                                                        </div>
+
+                                                    </div>
                                                 </div>
+                                                <div className='h-[0.4px] my-2 w-[90%] border-dashed border-t border-[#D9DBE9]'></div>
                                                 <p className='font-semibold mt-2'>Fight 2</p>
-                                                <div className='flex mt-1 items-center gap-x-5'>
-                                                    <div className='h-[70px] w-[40%] bg-purple-500'></div>
-                                                    <div className='h-[70px] w-[40%] bg-purple-500'></div>
+                                                <div className='flex items-center gap-x-5'>
+                                                    <div className='h-[70px] flex flex-col space-y-4 w-[40%] bg-transparent'>
+                                                        <div className='flex items-center'>
+                                                            <p className='m-0 p-0 text-[0.8rem]'>Uyo (QUO) -</p>
+                                                            <Icon icon="majesticons:airplane-line" width="17" height="17" />
+                                                            <p className='m-0 p-0 text-[0.8rem]'>- Lagos (LOS)</p>
+                                                        </div>
+
+                                                        <div className='flex items-center'>
+                                                            <Icon icon="iconoir:timer" width="24" height="24" />
+
+                                                            <p className='m-0 p-0 text-[0.8rem]'>Departure Date: <span className='text-[#00BBBB] text-[0.7rem]'>05 Sep 2024 - 09:30</span></p>
+                                                        </div>
+
+                                                    </div>
+                                                    <div className='h-[70px] flex flex-col space-y-4 w-[40%] bg-transparent'>
+                                                        <div className='flex items-center'>
+                                                            <p className='m-0 p-0 text-[0.8rem]'>Fight No: N2-143</p>
+
+                                                        </div>
+
+                                                        <div className='flex items-center'>
+                                                            <Icon icon="iconoir:timer" width="24" height="24" />
+
+                                                            <p className='m-0 p-0 text-[0.8rem]'>Return Date: <span className='text-[#00BBBB] text-[0.7rem]'>05 Sep 2024 - 09:30</span></p>
+                                                        </div>
+
+                                                    </div>
                                                 </div>
                                             </div>
                                             <p className='text-[1.1rem] font-bold'>Insurance Selection</p>
-                                            <div className='h-[170px] box-border w-[100%] bg-blue-500'></div>
+                                            <div className='h-[170px] box-border flex flex-col justify-center items-center w-[100%] bg-transparent border-[#D9DBE9] border-[0.5px] rounded-[12px]'>
+                                                <div className='flex items-center gap-x-4'>
+                                                    <Icon className='text-[#00BBBB]' icon="icon-park-solid:check-one" width="48" height="48" />
+                                                    <p className='text-[1.5rem] m-0 p-0'>Insurance added for the reservation</p>
+                                                </div>
+
+                                                <div className='flex justify-between items-center w-[80%] mt-[30px]'>
+                                                    <button className='rounded-[35px] text-[#00BBBB] border-[#00BBBB] border-[0.5px] flex items-center justify-center h-[30px] gap-x-2 min-w-[40%] w-auto bg-transparent
+ shadow-[0_4px_0_#4C3A00] px-6 py-2 hover:bg-white hover:translate-y-[2px] hover:shadow-[0_2px_0_#4C3A00] transition-all duration-200'>
+                                                        cancel
+
+                                                    </button>
+
+                                                    <button className='rounded-[35px] text-[#00BBBB] border-[#00BBBB] border-[0.5px] flex items-center justify-center h-[30px] gap-x-2 min-w-[40%] w-auto bg-transparent
+ shadow-[0_4px_0_#4C3A00] px-6 py-2 hover:bg-white hover:translate-y-[2px] hover:shadow-[0_2px_0_#4C3A00] transition-all duration-200'>
+                                                        change/edit
+
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <div className='h-[503px] box-border w-[30%] bg-green-500'></div>
+                                        <div className='h-[503px] box-border w-[30%] bg-transparent border-[#D9DBE9] border-[0.5px] rounded-[12px]'>
+                                            <div className='h-[45px] flex justify-start box-border items-center w-full bg-[#00BBBB] text-white text-[1.5rem] p-[30px] '>Your Basket</div>
+
+                                            <div className='flex justify-between items-start w-full mt-[30px]'>
+                                                <div className='h-full p-[10px] w-[45%] flex flex-col gap-y-2 bg-transparent'>
+
+                                                    <p className='font-semibold'>Ticket Fare</p>
+                                                    <p className='font-semibold underline'>Tax</p>
+                                                    <p className='font-semibold underline'>Surcharge</p>
+                                                    <p className='font-semibold'>SMS Fee</p>
+                                                    <p className='font-semibold'>Insurance Selection</p>
+                                                    <p className='font-semibold'>TOTAL</p>
+
+                                                </div>
+
+
+                                                <div className='h-full p-[10px] w-[45%] flex flex-col gap-y-3 bg-transparent'>
+
+                                                    <p>370,000 NGN</p>
+                                                    <p className='underline'>1,000 NGN</p>
+                                                    <p className='underline'>1,000 NGN</p>
+                                                    <p className=''>160 NGN</p>
+                                                    <p className=''>5,000 NGN</p>
+                                                    <p className='font-semibold'>377,160 NGN</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
