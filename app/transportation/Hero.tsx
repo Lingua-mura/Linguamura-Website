@@ -29,7 +29,7 @@ const Hero = () => {
                 <p className='font-bold text-[1.3rem] text-[#4E4B66] pl-[15px] p-[10px]'>Travel by Air</p>
                 <div className='flex justify-between items-center px-[12px]'>
                   <p className='text-[#4E4B66]'> Plan your next trip or commute with our transportation features</p>
-                  <Link href='/transportation/flight-booking'>
+                  <Link href='/transportation/flight/flight-booking'>
                   <button className="h-[44px] w-[50px] flex justify-center items-center rounded-md bg-gradient-to-r from-[#04E2E2] to-[#00BBBB] shadow-[0_4px_0_#009999] hover:translate-y-[2px] hover:shadow-[0_2px_0_#009999] transition-all duration-200">
                     <Icon className='p-0 m-0 text-white transition-transform duration-200 group-hover:translate-x-1' icon="pepicons-pop:arrow-right" width="20" height="20" />
                   </button>
@@ -45,11 +45,11 @@ const Hero = () => {
                 <p className='font-bold text-[1.3rem] text-[#4E4B66] pl-[15px] p-[10px]'>Travel by Land</p>
                 <div className='flex justify-between items-center px-[12px]'>
                   <p className='text-[#4E4B66]'> Plan your next trip or commute with our transportation features</p>
-              
-                  <button className="h-[44px] w-[80px] flex justify-center items-center rounded-md bg-gradient-to-r from-[#04E2E2] to-[#00BBBB] shadow-[0_4px_0_#009999] hover:translate-y-[2px] hover:shadow-[0_2px_0_#009999] transition-all duration-200">
+                  <Link href='/transportation/bus/bus-booking'>
+                  <button className="h-[44px] w-[50px] flex justify-center items-center rounded-md bg-gradient-to-r from-[#04E2E2] to-[#00BBBB] shadow-[0_4px_0_#009999] hover:translate-y-[2px] hover:shadow-[0_2px_0_#009999] transition-all duration-200">
                     <Icon className='p-0 m-0 text-white transition-transform duration-200 group-hover:translate-x-1' icon="pepicons-pop:arrow-right" width="20" height="20" />
                   </button>
-              
+                </Link>
                 </div>
               </div>
             </div>
@@ -61,9 +61,11 @@ const Hero = () => {
                 <p className='font-bold text-[1.3rem] text-[#4E4B66] pl-[15px] p-[10px]'>Travel by Water</p>
                 <div className='flex justify-between items-center px-[12px]'>
                   <p className='text-[#4E4B66]'> Plan your next trip or commute with our transportation features</p>
-                  <button className="h-[44px] w-[80px] flex justify-center items-center rounded-md bg-gradient-to-r from-[#04E2E2] to-[#00BBBB] shadow-[0_4px_0_#009999] hover:translate-y-[2px] hover:shadow-[0_2px_0_#009999] transition-all duration-200">
+                  <Link href='/transportation/boat/boat-booking'>
+                  <button className="h-[44px] w-[50px] flex justify-center items-center rounded-md bg-gradient-to-r from-[#04E2E2] to-[#00BBBB] shadow-[0_4px_0_#009999] hover:translate-y-[2px] hover:shadow-[0_2px_0_#009999] transition-all duration-200">
                     <Icon className='p-0 m-0 text-white transition-transform duration-200 group-hover:translate-x-1' icon="pepicons-pop:arrow-right" width="20" height="20" />
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -73,7 +75,7 @@ const Hero = () => {
             <div className='mt-[70px] bg-[#FFF9E5] flex flex-col justify-center w-[92%] h-[220px] rounded-[20px] p-10 mb-[100px]'>
               <div className='flex justify-between items-center px-[12px]'>
                 <p className='text-[1.8rem] font-bold w-[45%]'>Find your ideal flight with exclusive deals on airfare and travel options</p>
-                <Link href='/transportation/flight-booking' className='no-underline'>
+                <Link href='/transportation/flight/flight-booking' className='no-underline'>
                 <button className='rounded-[35px] flex items-center justify-center h-[50px] gap-x-2 min-w-[250px] w-auto bg-[#FFFFFF] text-[#292D32] shadow-[0_4px_0_#4C3A00] px-6 py-2 hover:bg-white hover:translate-y-[2px] hover:shadow-[0_2px_0_#4C3A00] transition-all duration-200'>View details
                   <Icon className='p-0 m-0 transition-transform duration-200 group-hover:translate-x-1' icon="pepicons-pop:arrow-right" width="20" height="20" />
                 </button>

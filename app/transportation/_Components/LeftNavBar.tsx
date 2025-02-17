@@ -49,7 +49,7 @@ const LeftNavBar = () => {
 
       <div className='flex-1 overflow-y-auto no-scrollbar'>
         <div className={`min-h-[70vh] mt-[70px] h-auto w-full flex flex-col justify-start p-[24px] items-start bg-transparent border-t border-b border-[#D9DBE9] ${isCollapsed ? 'items-center' : ''}`}>
-          <div className={`h-[45px] box-border space-x-2 p-[12px] ${isCollapsed ? 'w-[45px]' : 'w-[250px]'} border border-[#D9DBE9] rounded-[30px] flex justify-center items-center mt-[15px] transition-all duration-300`}>
+          <div className={`h-[45px] box-border space-x-2 p-[12px] ${isCollapsed ? 'w-[45px]' : 'w-[220px]'} border border-[#D9DBE9] rounded-[30px] flex justify-center items-center mt-[15px] transition-all duration-300`}>
             <Icon icon="ri:search-2-line" width="30" height="30" className='text-[#6E7191]' />
             <input type='text' placeholder='Search' className={`w-full outline-none border-none mt-1 text-[0.9rem] text-[#6E7191] ${isCollapsed ? 'hidden' : 'block'}`} />
           </div>
