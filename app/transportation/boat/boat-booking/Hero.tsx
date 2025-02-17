@@ -24,28 +24,48 @@ const Hero = () => {
                                     {
                                         icon: "majesticons:airplane-line",
                                         text: "Travel by Air",
+                                        size: 24,
+                                        link: '/transportation/flight/flight-booking', // Added the link for Travel by Air
                                     },
                                     {
-                                        icon: "teenyicons:car-outline", text: "Travel by land", size: 20,
+                                        icon: "teenyicons:car-outline",
+                                        text: "Travel by Land",
+                                        size: 20,
+                                        link: '/transportation/bus/bus-booking', // Link for Travel by Land
                                     },
-                                    { icon: "hugeicons:boat", text: "Travel by water",
-                                        bg: "#A0EBEB",
-                                        textColor: "#4E4B66", },
-                                ].map(({ icon, text, size = 24, bg, textColor }, index) => (
-                                    <div
-                                        key={index}
-                                        className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""
-                                            }`}
-                                        style={{
-                                            backgroundColor: bg || "transparent",
-                                            color: textColor || "inherit",
-                                        }}
-                                    >
-                                        <Icon icon={icon} width={size} height={size} />
-                                        <span className="text-[0.9rem]">{text}</span>
-                                    </div>
+                                    { icon: "hugeicons:boat", text: "Travel by Water", bg: "#A0EBEB", textColor: "#4E4B66" },
+                                ].map(({ icon, text, size = 24, bg, textColor, link }, index) => (
+                                    link ? (
+                                        <Link href={link} key={index} className="no-underline text-white">
+                                            <div
+                                                className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""
+                                                    }`}
+                                                style={{
+                                                    backgroundColor: bg || "transparent",
+                                                    color: textColor || "inherit",
+                                                }}
+                                            >
+                                                <Icon icon={icon} width={size} height={size} />
+                                                <span className="text-[0.9rem]">{text}</span>
+                                            </div>
+                                        </Link>
+                                    ) : (
+                                        <div
+                                            key={index}
+                                            className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""
+                                                }`}
+                                            style={{
+                                                backgroundColor: bg || "transparent",
+                                                color: textColor || "inherit",
+                                            }}
+                                        >
+                                            <Icon icon={icon} width={size} height={size} />
+                                            <span className="text-[0.9rem]">{text}</span>
+                                        </div>
+                                    )
                                 ))}
                             </div>
+
 
                             <p className='text-white text-[1.9rem] mt-[55px] font-bold'>Boats</p>
 
@@ -63,26 +83,30 @@ const Hero = () => {
                             <div className='w-full px-[30px] h-full flex items-center justify-between -mt-5'>
                                 <div className='rounded-[40px] justify-start p-3 items-center box-border text-[0.9rem] flex items text-[#A0A3BD] center gap-x-2 w-[25%] h-[50px] bg-[#F7F7FC] border-[0.3px] border-[#D9DBE9]'>
                                     <Icon icon="mingcute:location-line" width="24" height="24" />
-                                    <p className='m-0 p-0'>Where are you going?</p>
+                                    <input type="text" placeholder='Where are you going?' className='outline-none border-none text-[#A0A3BD] bg-transparent' />
                                 </div>
 
                                 <div className='rounded-[40px] justify-between p-3 items-center box-border text-[0.9rem] flex items text-[#A0A3BD] center gap-x-2 w-[25%] h-[50px] bg-[#F7F7FC] border-[0.3px] border-[#D9DBE9]'>
-
-                                    <p className='m-0 p-0'>Pick a date</p>
-                                    <Icon icon="solar:calendar-linear" width="24" height="24" />
+                                    <input 
+                                        type="date" 
+                                        placeholder='Pick a date'
+                                        className='outline-none border-none text-[#A0A3BD] bg-transparent w-full'
+                                    />
+                                    
                                 </div>
 
                                 <div className='rounded-[40px] justify-start p-3 items-center box-border text-[0.9rem] flex items text-[#A0A3BD] center gap-x-2 w-[25%] h-[50px] bg-[#F7F7FC] border-[0.3px] border-[#D9DBE9]'>
                                     <Icon icon="fa:user-o" width="24" height="24" />
-                                    <p className='m-0 p-0'>Who's in?</p>
+                                    <input type="text" placeholder='Who is in?' className='outline-none border-none text-[#A0A3BD] bg-transparent' />
 
                                 </div>
-
-                                <button className='rounded-[35px] -mt-[10px] text-[#EFF0F6] flex items-center justify-center h-[50px] gap-x-2 min-w-[15%] w-auto bg-gradient-to-r from-[#04E2E2] to-[#00BBBB]
+                                <Link href='/transportation/boat/boat-search' className='w-[15%] no-underline'>
+                                    <button className='rounded-[35px] -mt-[10px] text-[#EFF0F6] flex items-center justify-center h-[50px] gap-x-2 min-w-[100%] w-auto bg-gradient-to-r from-[#04E2E2] to-[#00BBBB]
  shadow-[0_4px_0_#4C3A00] px-6 py-2 hover:bg-white hover:translate-y-[2px] hover:shadow-[0_2px_0_#4C3A00] transition-all duration-200'>
-                                    search
+                                        search
 
-                                </button>
+                                    </button>
+                                </Link>
 
                             </div>
 
@@ -90,7 +114,7 @@ const Hero = () => {
                             <div className='w-full mt-[40px] flex flex-col justify-center items-start px-[30px]'>
                                 <p className='text-[1.8rem] text-[#14142A] font-medium'>Discover Boats Near You</p>
 
-                                <div className={`grid grid-cols-3 ${isCollapsed ? 'gap-24' : 'gap-6' }  mt-[30px] w-full`}>
+                                <div className={`grid grid-cols-3 ${isCollapsed ? 'gap-24' : 'gap-6'}  mt-[30px] w-full`}>
                                     {[...Array(6)].map((_, index) => (
                                         <div
                                             key={index}
@@ -103,7 +127,7 @@ const Hero = () => {
                                                 height={150}
                                                 width={335}
                                             /> */}
-                                            <div style={{background: "url(/coach-bus.webp)"}} className='h-[150px] rounded-t-[25px] w-full'></div>
+                                            <div style={{ background: "url(/coach-bus.webp)" }} className='h-[150px] rounded-t-[25px] w-full'></div>
                                             <div className="p-[20px] leading-3">
                                                 <p className="text-[1.1rem] font-bold">
                                                     45ft Power Catamaran Charter

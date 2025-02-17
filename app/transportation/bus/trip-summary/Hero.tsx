@@ -5,9 +5,11 @@ import { Icon } from '@iconify/react';
 import Image from 'next/image'
 import { useSidebar } from '../../_Context/SidebarContext'
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
 const Hero = () => {
     const { isCollapsed } = useSidebar();
-
+    const router = useRouter();
     return (
         <div className={`h-screen flex flex-col transition-all duration-300 ease-in-out border-[#D9DBE9] border-[0.5px] ${isCollapsed ? 'w-[calc(100vw-100px)]' : 'w-[calc(100vw-280px)]'}`}>
             <Header />
@@ -24,28 +26,51 @@ const Hero = () => {
                                     {
                                         icon: "majesticons:airplane-line",
                                         text: "Travel by Air",
+                                        link: "/transportation/flight/flight-booking", // Add route here for Travel by Air
                                     },
                                     {
-                                        icon: "teenyicons:car-outline", text: "Travel by land", size: 20,
+                                        icon: "teenyicons:car-outline",
+                                        text: "Travel by land",
+                                        size: 20,
                                         bg: "#A0EBEB",
                                         textColor: "#4E4B66",
+                                        link: "/transportation/bus/bus-booking", // Add route here for Travel by Land
                                     },
-                                    { icon: "hugeicons:boat", text: "Travel by water" },
-                                ].map(({ icon, text, size = 24, bg, textColor }, index) => (
-                                    <div
-                                        key={index}
-                                        className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""
-                                            }`}
-                                        style={{
-                                            backgroundColor: bg || "transparent",
-                                            color: textColor || "inherit",
-                                        }}
-                                    >
-                                        <Icon icon={icon} width={size} height={size} />
-                                        <span className="text-[0.9rem]">{text}</span>
-                                    </div>
+                                    {
+                                        icon: "hugeicons:boat",
+                                        text: "Travel by water",
+                                        link: "/transportation/boat/boat-booking", // Add route here for Travel by Water
+                                    },
+                                ].map(({ icon, text, size = 24, bg, textColor, link }, index) => (
+                                    link ? (
+                                        <Link href={link} key={index} className="text-white no-underline">
+                                            <div
+                                                className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""}`}
+                                                style={{
+                                                    backgroundColor: bg || "transparent",
+                                                    color: textColor || "inherit",
+                                                }}
+                                            >
+                                                <Icon icon={icon} width={size} height={size} />
+                                                <span className="text-[0.9rem]">{text}</span>
+                                            </div>
+                                        </Link>
+                                    ) : (
+                                        <div
+                                            key={index}
+                                            className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""}`}
+                                            style={{
+                                                backgroundColor: bg || "transparent",
+                                                color: textColor || "inherit",
+                                            }}
+                                        >
+                                            <Icon icon={icon} width={size} height={size} />
+                                            <span className="text-[0.9rem]">{text}</span>
+                                        </div>
+                                    )
                                 ))}
                             </div>
+
 
                             <p className='text-white text-[1.9rem] mt-[55px] font-bold'>Bus</p>
 
@@ -63,13 +88,19 @@ const Hero = () => {
                         >
 
                             <div className='w-full flex items-start mt-[30px] mb-[40px]'>
-                                <Icon icon="cuida:arrow-left-outline" width="90" height="40" />
+                                <Icon
+                                    icon="cuida:arrow-left-outline"
+                                    width="90"
+                                    height="40"
+                                    onClick={() => router.back()}
+                                    className='cursor-pointer'
+                                />
                             </div>
                             <div className='flex w-full min-h-[400px] h-auto justify-center items-center'>
                                 <div className='h-auto w-[90%] bg-transparent flex flex-col justify-center border-[#D9DBE9] border-[0.3px] mt-[350px] rounded-[10px] items-center p-8'>
                                     <p className='text-[1.3rem] mb-[50px] font-bold'>Trip Summary</p>
-                                    
-                                    <div className='w-[50%] h-[400px] flex space-x-4 justify-between items-center'>  
+
+                                    <div className='w-[50%] h-[400px] flex space-x-4 justify-between items-center'>
                                         <div className='w-[100%] text-[0.9rem] flex flex-col item-start gap-y-2 h-[90%] bg-transparent'>
                                             <p>From</p>
                                             <p>To</p>
@@ -97,14 +128,16 @@ const Hero = () => {
                                     </div>
 
                                     <div className='w-full mt-14 px-4'>
-                                        
+
 
                                         <div className='flex justify-center items-center mt-5'>
-                                            <button className='rounded-[35px] text-[#EFF0F6] flex items-center justify-center h-[40px] mt-[10px] gap-x-2 min-w-[25%] w-auto bg-gradient-to-r from-[#04E2E2] to-[#00BBBB]
+                                            <Link href='/transportation/bus/trip-payment' className='no-underline w-[25%]'>
+                                                <button className='rounded-[35px] text-[#EFF0F6] flex items-center justify-center h-[40px] mt-[10px] gap-x-2 min-w-[100%] w-auto bg-gradient-to-r from-[#04E2E2] to-[#00BBBB]
  shadow-[0_4px_0_#4C3A00] px-6 py-2 hover:bg-white hover:translate-y-[2px] hover:shadow-[0_2px_0_#4C3A00] transition-all duration-200'>
-                                                Pay
+                                                    Pay
 
-                                            </button>
+                                                </button>
+                                            </Link>
                                         </div>
                                     </div>
 

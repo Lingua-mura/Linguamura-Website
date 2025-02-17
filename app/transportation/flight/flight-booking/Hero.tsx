@@ -26,24 +26,49 @@ const Hero = () => {
                                         text: "Travel by Air",
                                         bg: "#A0EBEB",
                                         textColor: "#4E4B66",
+
                                     },
-                                    { icon: "teenyicons:car-outline", text: "Travel by land", size: 20 },
-                                    { icon: "hugeicons:boat", text: "Travel by water" },
-                                ].map(({ icon, text, size = 24, bg, textColor }, index) => (
-                                    <div
-                                        key={index}
-                                        className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""
-                                            }`}
-                                        style={{
-                                            backgroundColor: bg || "transparent",
-                                            color: textColor || "inherit",
-                                        }}
-                                    >
-                                        <Icon icon={icon} width={size} height={size} />
-                                        <span className="text-[0.9rem]">{text}</span>
-                                    </div>
+                                    {
+                                        icon: "teenyicons:car-outline",
+                                        text: "Travel by land",
+                                        size: 20,
+                                        link: "/transportation/bus/bus-booking", // Route for Travel by Land
+                                    },
+                                    {
+                                        icon: "hugeicons:boat",
+                                        text: "Travel by water",
+                                        link: "/transportation/boat/boat-booking", // Route for Travel by Water
+                                    },
+                                ].map(({ icon, text, size = 24, bg, textColor, link }, index) => (
+                                    link ? (
+                                        <Link href={link} key={index} className="no-underline text-white">
+                                            <div
+                                                className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""}`}
+                                                style={{
+                                                    backgroundColor: bg || "transparent",
+                                                    color: textColor || "inherit",
+                                                }}
+                                            >
+                                                <Icon icon={icon} width={size} height={size} />
+                                                <span className="text-[0.9rem]">{text}</span>
+                                            </div>
+                                        </Link>
+                                    ) : (
+                                        <div
+                                            key={index}
+                                            className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""}`}
+                                            style={{
+                                                backgroundColor: bg || "transparent",
+                                                color: textColor || "inherit",
+                                            }}
+                                        >
+                                            <Icon icon={icon} width={size} height={size} />
+                                            <span className="text-[0.9rem]">{text}</span>
+                                        </div>
+                                    )
                                 ))}
                             </div>
+
 
                             <p className='text-white text-[1.9rem] mt-[45px] font-bold'>Flight</p>
                             <p className='text-[#6E7191] mt-[10px]'>Find the property that appeal to you the most </p>
@@ -98,69 +123,88 @@ const Hero = () => {
                                 </div>
 
                                 <div className='mt-[20px] flex items-center space-x-4'>
-
-                                    <div className='bg-[#EFF0F6] box-border rounded-[10px] text-[0.9rem] p-[20px] flex items-center justify-between h-[80px] w-[25%]'>
-                                        <div className='leading-[1.2] flex flex-col justify-center'>
-                                            <p className='text-[#A0A3BD] mt-[15px]'>Flying from</p>
-                                            <p className='text-[#4E4B6] font-bold text-[1rem]'>departure</p>
+                                    <div className='bg-[#EFF0F6] box-border rounded-[10px] text-[0.9rem] p-[20px] flex items-center justify-between h-[80px] w-[25%] relative group'>
+                                        <div className='leading-[1.2] flex flex-col justify-center w-full'>
+                                            <p className='text-[#A0A3BD]'>Flying from</p>
+                                            <input 
+                                                type="text"
+                                                placeholder="departure"
+                                                className='bg-transparent outline-none border-none text-[#4E4B66] font-bold text-[1rem]'
+                                            />
                                         </div>
-                                        <Icon icon="iconamoon:arrow-down-2-light" width="24" height="24" />
+                                        <Icon icon="iconamoon:arrow-down-2-light" width="24" height="24" className="cursor-pointer" />
+                                    </div>
+
+                                    <div className='bg-[#EFF0F6] box-border rounded-[10px] text-[0.9rem] p-[20px] flex items-center justify-between h-[80px] w-[25%] relative group'>
+                                        <div className='leading-[1.2] flex flex-col justify-center w-full'>
+                                            <p className='text-[#A0A3BD]'>Flying to</p>
+                                            <input 
+                                                type="text"
+                                                placeholder="arrival"
+                                                className='bg-transparent outline-none border-none text-[#4E4B66] font-bold text-[1rem]'
+                                            />
+                                        </div>
+                                        <Icon icon="iconamoon:arrow-down-2-light" width="24" height="24" className="cursor-pointer" />
                                     </div>
 
                                     <div className='bg-[#EFF0F6] box-border rounded-[10px] text-[0.9rem] p-[20px] flex items-center justify-between h-[80px] w-[25%]'>
-                                        <div className='leading-[1.2] flex flex-col justify-center'>
-                                            <p className='text-[#A0A3BD] mt-[15px]'>Flying to</p>
-                                            <p className='text-[#4E4B6] font-bold text-[1rem]'>arrival</p>
+                                        <div className='leading-[1.2] flex flex-col justify-center w-full'>
+                                            <p className='text-[#A0A3BD]'>Departure date</p>
+                                            <input 
+                                                type="date"
+                                                className='bg-transparent outline-none border-none text-[#4E4B66] font-bold text-[1rem]'
+                                            />
                                         </div>
-                                        <Icon icon="iconamoon:arrow-down-2-light" width="24" height="24" />
+                                        {/* <Icon icon="solar:calendar-outline" width="24" height="24" /> */}
                                     </div>
-
 
                                     <div className='bg-[#EFF0F6] box-border rounded-[10px] text-[0.9rem] p-[20px] flex items-center justify-between h-[80px] w-[25%]'>
-                                        <div className='leading-[1.2] flex flex-col justify-center'>
-                                            <p className='text-[#A0A3BD] mt-[15px]'>Departure date</p>
-                                            <p className='text-[#4E4B6] font-bold text-[1rem]'>mm/dd/yyyy</p>
+                                        <div className='leading-[1.2] flex flex-col justify-center w-full'>
+                                            <p className='text-[#A0A3BD]'>Return date</p>
+                                            <input 
+                                                type="date"
+                                                className='bg-transparent outline-none border-none text-[#4E4B66] font-bold text-[1rem]'
+                                            />
                                         </div>
-                                        <Icon icon="solar:calendar-outline" width="24" height="24" />
+                                        {/* <Icon icon="solar:calendar-outline" width="24" height="24" /> */}
                                     </div>
-
-
-                                    <div className='bg-[#EFF0F6] box-border rounded-[10px] text-[0.9rem] p-[20px] flex items-center justify-between h-[80px] w-[25%]'>
-                                        <div className='leading-[1.2] flex flex-col justify-center'>
-                                            <p className='text-[#A0A3BD] mt-[15px]'>Return date</p>
-                                            <p className='text-[#4E4B6] font-bold text-[1rem]'>mm/dd/yyyy</p>
-                                        </div>
-                                        <Icon icon="solar:calendar-outline" width="24" height="24" />
-                                    </div>
-
-
                                 </div>
+
                                 <div className='mt-[20px] flex items-center space-x-4'>
-
-                                    <div className='bg-[#EFF0F6] box-border rounded-[10px] text-[0.9rem] p-[20px] flex items-center justify-between h-[80px] w-[25%]'>
-                                        <div className='leading-[1.2] flex flex-col justify-center'>
-                                            <p className='text-[#A0A3BD] mt-[15px]'>Adult(12yrs+)</p>
-                                            <p className='text-[#4E4B6] font-bold text-[1rem]'>2</p>
+                                    <div className='bg-[#EFF0F6] box-border rounded-[10px] text-[0.9rem] p-[20px] flex items-center justify-between h-[80px] w-[25%] relative group'>
+                                        <div className='leading-[1.2] flex flex-col justify-center w-full'>
+                                            <p className='text-[#A0A3BD]'>Adult(12yrs+)</p>
+                                            <select className='bg-transparent outline-none border-none text-[#4E4B66] font-bold text-[1rem] appearance-none w-full'>
+                                                {[...Array(10)].map((_, i) => (
+                                                    <option key={i} value={i}>{i}</option>
+                                                ))}
+                                            </select>
                                         </div>
-                                        <Icon icon="iconamoon:arrow-down-2-light" width="24" height="24" />
+                                        <Icon icon="iconamoon:arrow-down-2-light" width="24" height="24" className="cursor-pointer" />
                                     </div>
 
-
-                                    <div className='bg-[#EFF0F6] box-border rounded-[10px] text-[0.9rem] p-[20px] flex items-center justify-between h-[80px] w-[25%]'>
-                                        <div className='leading-[1.2] flex flex-col justify-center'>
-                                            <p className='text-[#A0A3BD] mt-[15px]'>Child(22-11yrs)</p>
-                                            <p className='text-[#4E4B6] font-bold text-[1rem]'>0</p>
+                                    <div className='bg-[#EFF0F6] box-border rounded-[10px] text-[0.9rem] p-[20px] flex items-center justify-between h-[80px] w-[25%] relative group'>
+                                        <div className='leading-[1.2] flex flex-col justify-center w-full'>
+                                            <p className='text-[#A0A3BD]'>Child(2-11yrs)</p>
+                                            <select className='bg-transparent outline-none border-none text-[#4E4B66] font-bold text-[1rem] appearance-none w-full'>
+                                                {[...Array(10)].map((_, i) => (
+                                                    <option key={i} value={i}>{i}</option>
+                                                ))}
+                                            </select>
                                         </div>
-                                        <Icon icon="iconamoon:arrow-down-2-light" width="24" height="24" />
+                                        <Icon icon="iconamoon:arrow-down-2-light" width="24" height="24" className="cursor-pointer" />
                                     </div>
 
-
-                                    <div className='bg-[#EFF0F6] box-border rounded-[10px] text-[0.9rem] p-[20px] flex items-center justify-between h-[80px] w-[25%]'>
-                                        <div className='leading-[1.2] flex flex-col justify-center'>
-                                            <p className='text-[#A0A3BD] mt-[15px]'>Infant(0-2yrs)</p>
-                                            <p className='text-[#4E4B6] font-bold text-[1rem]'>0</p>
+                                    <div className='bg-[#EFF0F6] box-border rounded-[10px] text-[0.9rem] p-[20px] flex items-center justify-between h-[80px] w-[25%] relative group'>
+                                        <div className='leading-[1.2] flex flex-col justify-center w-full'>
+                                            <p className='text-[#A0A3BD]'>Infant(0-2yrs)</p>
+                                            <select className='bg-transparent outline-none border-none text-[#4E4B66] font-bold text-[1rem] appearance-none w-full'>
+                                                {[...Array(10)].map((_, i) => (
+                                                    <option key={i} value={i}>{i}</option>
+                                                ))}
+                                            </select>
                                         </div>
-                                        <Icon icon="iconamoon:arrow-down-2-light" width="24" height="24" />
+                                        <Icon icon="iconamoon:arrow-down-2-light" width="24" height="24" className="cursor-pointer" />
                                     </div>
 
 

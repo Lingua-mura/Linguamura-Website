@@ -4,81 +4,8 @@ import Header from './Header'
 import { Icon } from '@iconify/react';
 import Image from 'next/image'
 import { useSidebar } from '../../_Context/SidebarContext'
-
-const CalendarComponent = () => {
-    const [startIndex, setStartIndex] = useState(0);
-    const [selectedDate, setSelectedDate] = useState<string | null>(null);
-    const [showDatePicker, setShowDatePicker] = useState(false);
-    const daysInMonth = Array.from({ length: 31 }, (_, i) => i + 1);
-    const visibleDays = 7;
-
-    const handleNext = () => {
-        if (startIndex + visibleDays < daysInMonth.length) {
-            setStartIndex(startIndex + visibleDays);
-        }
-    };
-
-    const handlePrev = () => {
-        if (startIndex - visibleDays >= 0) {
-            setStartIndex(startIndex - visibleDays);
-        }
-    };
-
-    const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSelectedDate(event.target.value);
-        setShowDatePicker(false);
-    };
-
-    return (
-        <div className="w-full mt-[35px] flex flex-col items-center justify-center">
-            <div className="w-full flex items-center justify-between">
-                <button
-                    onClick={handlePrev}
-                    className={`p-2 rounded-full ${startIndex === 0 ? "opacity-50 cursor-not-allowed" : "bg-gray-200 hover:bg-gray-300"
-                        }`}
-                    disabled={startIndex === 0}
-                >
-                    <Icon icon="solar:alt-arrow-left-outline" width="24" height="24" />
-                </button>
-                <div className="flex items-center justify-between w-full mx-4 gap-2">
-                    {daysInMonth.slice(startIndex, startIndex + visibleDays).map((day) => (
-                        <div
-                            key={day}
-                            className="flex flex-1 flex-col items-center justify-center text-center py-3 rounded-md bg-[#D9DBE9] cursor-pointer h-[170px] w-[105px] hover:bg-[#00BBBB] hover:text-white transition-all duration-300"
-                        >
-                            <div className='flex flex-col items-center justify-center'>
-                                {day} <p>Feb</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="mt-4 flex  flex-col items-center space-x-2 cursor-pointer" onClick={() => setShowDatePicker(!showDatePicker)}>
-                    <Icon icon="solar:calendar-outline" width="24" height="24" className="text-gray-600 hover:text-black" />
-                    <span className="text-gray-700 text-[1rem] font-bold whitespace-nowrap mt-3 mr-3">{selectedDate ? selectedDate : "Calendar"}</span>
-                    {showDatePicker && (
-                        <input
-                            type="date"
-                            className="mt-2 p-2 border rounded-md"
-                            onChange={handleDateChange}
-                        />
-                    )}
-                </div>
-                <button
-                    onClick={handleNext}
-                    className={`p-2 rounded-full ${startIndex + visibleDays >= daysInMonth.length ? "opacity-50 cursor-not-allowed" : "bg-gray-200 hover:bg-gray-300"
-                        }`}
-                    disabled={startIndex + visibleDays >= daysInMonth.length}
-                >
-
-                    <Icon icon="solar:alt-arrow-right-outline" width="24" height="24" />
-                </button>
-            </div>
-
-
-        </div>
-    );
-};
-
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 const Hero = () => {
     const { isCollapsed } = useSidebar();
     const steps = [
@@ -88,6 +15,7 @@ const Hero = () => {
         "Payment",
         "Confirmation",
     ];
+    const router = useRouter();
 
     const [activeStep, setActiveStep] = useState(0);
 
@@ -109,24 +37,49 @@ const Hero = () => {
                                         text: "Travel by Air",
                                         bg: "#A0EBEB",
                                         textColor: "#4E4B66",
+
                                     },
-                                    { icon: "teenyicons:car-outline", text: "Travel by land", size: 20 },
-                                    { icon: "hugeicons:boat", text: "Travel by water" },
-                                ].map(({ icon, text, size = 24, bg, textColor }, index) => (
-                                    <div
-                                        key={index}
-                                        className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""
-                                            }`}
-                                        style={{
-                                            backgroundColor: bg || "transparent",
-                                            color: textColor || "inherit",
-                                        }}
-                                    >
-                                        <Icon icon={icon} width={size} height={size} />
-                                        <span className="text-[0.9rem]">{text}</span>
-                                    </div>
+                                    {
+                                        icon: "teenyicons:car-outline",
+                                        text: "Travel by land",
+                                        size: 20,
+                                        link: "/transportation/bus/bus-booking", // Route for Travel by Land
+                                    },
+                                    {
+                                        icon: "hugeicons:boat",
+                                        text: "Travel by water",
+                                        link: "/transportation/boat/boat-booking", // Route for Travel by Water
+                                    },
+                                ].map(({ icon, text, size = 24, bg, textColor, link }, index) => (
+                                    link ? (
+                                        <Link href={link} key={index} className="text-white no-underline">
+                                            <div
+                                                className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""}`}
+                                                style={{
+                                                    backgroundColor: bg || "transparent",
+                                                    color: textColor || "inherit",
+                                                }}
+                                            >
+                                                <Icon icon={icon} width={size} height={size} />
+                                                <span className="text-[0.9rem]">{text}</span>
+                                            </div>
+                                        </Link>
+                                    ) : (
+                                        <div
+                                            key={index}
+                                            className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""}`}
+                                            style={{
+                                                backgroundColor: bg || "transparent",
+                                                color: textColor || "inherit",
+                                            }}
+                                        >
+                                            <Icon icon={icon} width={size} height={size} />
+                                            <span className="text-[0.9rem]">{text}</span>
+                                        </div>
+                                    )
                                 ))}
                             </div>
+
 
                             <p className='text-white text-[1.9rem] mt-[45px] font-bold'>Flight</p>
                             <p className='text-[#6E7191] mt-[10px]'>Find the property that appeal to you the most </p>
@@ -153,25 +106,36 @@ const Hero = () => {
                         >
                             <div className={`h-[85%] flex flex-col py-[40px] w-[100%] bg-[#FCFCFC] -mt-[6px] rounded-[13px] rounded-tl-none`}>
 
-                                <Icon icon="cuida:arrow-left-outline" width="90" height="40" />
+                                <div className='w-full flex items-start mt-[30px] mb-[40px]'>
+                                    <Icon
+                                        icon="cuida:arrow-left-outline"
+                                        width="90"
+                                        height="40"
+                                        onClick={() => router.back()}
+                                        className='cursor-pointer'
+                                    />
+                                </div>
 
 
                                 <div className="flex mt-[40px] items-center justify-between w-[100%] px-8">
                                     {steps.map((step, index) => (
                                         <div key={index} className="flex flex-col items-center relative w-[100%]">
-                                            {/* Lines (Put before the checkpoint) */}
+                                            {/* Lines */}
                                             {index !== steps.length - 1 && (
-                                                <div className="absolute top-3 -right-[50%] w-full h-[2px] bg-gray-300" />
+                                                <div className={`absolute top-3 -right-[50%] w-full h-[2px] transition-all duration-300 ${
+                                                    index <= 2 ? "bg-teal-500" : "bg-gray-300"
+                                                }`} />
                                             )}
 
                                             {/* Step Circle */}
                                             <div
-                                                className={`w-6 h-6 flex items-center justify-center rounded-full border-2 transition-all duration-300 z-10 ${index === activeStep
+                                                className={`w-6 h-6 flex items-center justify-center rounded-full border-2 transition-all duration-300 z-10 ${
+                                                    index <= 2
                                                     ? "border-teal-500 bg-teal-500 text-white"
                                                     : "border-gray-300 bg-white text-gray-400"
-                                                    }`}
+                                                }`}
                                             >
-                                                {index === activeStep ? (
+                                                {index <= 2 ? (
                                                     <Icon icon="mdi:check" className="text-[14px]" />
                                                 ) : (
                                                     <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
@@ -345,12 +309,12 @@ const Hero = () => {
                                     </button>
 
 
-
-                                    <button className='rounded-[35px] text-[#EFF0F6] flex items-center justify-center h-[50px] gap-x-2 min-w-[25%] w-auto bg-gradient-to-r from-[#04E2E2] to-[#00BBBB]
+                                    <Link className='no-underline w-[25%]' href='/transportation/flight/flight-payment'>
+                                        <button className='rounded-[35px] text-[#EFF0F6] flex items-center justify-center h-[50px] gap-x-2 min-w-[100%] w-auto bg-gradient-to-r from-[#04E2E2] to-[#00BBBB]
  shadow-[0_4px_0_#4C3A00] px-6 py-2 hover:bg-white hover:translate-y-[2px] hover:shadow-[0_2px_0_#4C3A00] transition-all duration-200'>
-                                        Continue
-
-                                    </button>
+                                            Continue
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

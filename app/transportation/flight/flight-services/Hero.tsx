@@ -4,80 +4,8 @@ import Header from './Header'
 import { Icon } from '@iconify/react';
 import Image from 'next/image'
 import { useSidebar } from '../../_Context/SidebarContext'
-
-const CalendarComponent = () => {
-    const [startIndex, setStartIndex] = useState(0);
-    const [selectedDate, setSelectedDate] = useState<string | null>(null);
-    const [showDatePicker, setShowDatePicker] = useState(false);
-    const daysInMonth = Array.from({ length: 31 }, (_, i) => i + 1);
-    const visibleDays = 7;
-
-    const handleNext = () => {
-        if (startIndex + visibleDays < daysInMonth.length) {
-            setStartIndex(startIndex + visibleDays);
-        }
-    };
-
-    const handlePrev = () => {
-        if (startIndex - visibleDays >= 0) {
-            setStartIndex(startIndex - visibleDays);
-        }
-    };
-
-    const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setSelectedDate(event.target.value);
-        setShowDatePicker(false);
-    };
-
-    return (
-        <div className="w-full mt-[35px] flex flex-col items-center justify-center">
-            <div className="w-full flex items-center justify-between">
-                <button
-                    onClick={handlePrev}
-                    className={`p-2 rounded-full ${startIndex === 0 ? "opacity-50 cursor-not-allowed" : "bg-gray-200 hover:bg-gray-300"
-                        }`}
-                    disabled={startIndex === 0}
-                >
-                    <Icon icon="solar:alt-arrow-left-outline" width="24" height="24" />
-                </button>
-                <div className="flex items-center justify-between w-full mx-4 gap-2">
-                    {daysInMonth.slice(startIndex, startIndex + visibleDays).map((day) => (
-                        <div
-                            key={day}
-                            className="flex flex-1 flex-col items-center justify-center text-center py-3 rounded-md bg-[#D9DBE9] cursor-pointer h-[170px] w-[105px] hover:bg-[#00BBBB] hover:text-white transition-all duration-300"
-                        >
-                            <div className='flex flex-col items-center justify-center'>
-                                {day} <p>Feb</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <div className="mt-4 flex  flex-col items-center space-x-2 cursor-pointer" onClick={() => setShowDatePicker(!showDatePicker)}>
-                    <Icon icon="solar:calendar-outline" width="24" height="24" className="text-gray-600 hover:text-black" />
-                    <span className="text-gray-700 text-[1rem] font-bold whitespace-nowrap mt-3 mr-3">{selectedDate ? selectedDate : "Calendar"}</span>
-                    {showDatePicker && (
-                        <input
-                            type="date"
-                            className="mt-2 p-2 border rounded-md"
-                            onChange={handleDateChange}
-                        />
-                    )}
-                </div>
-                <button
-                    onClick={handleNext}
-                    className={`p-2 rounded-full ${startIndex + visibleDays >= daysInMonth.length ? "opacity-50 cursor-not-allowed" : "bg-gray-200 hover:bg-gray-300"
-                        }`}
-                    disabled={startIndex + visibleDays >= daysInMonth.length}
-                >
-
-                    <Icon icon="solar:alt-arrow-right-outline" width="24" height="24" />
-                </button>
-            </div>
-
-
-        </div>
-    );
-};
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Hero = () => {
     const { isCollapsed } = useSidebar();
@@ -88,7 +16,7 @@ const Hero = () => {
         "Payment",
         "Confirmation",
     ];
-
+    const router = useRouter();
     const [activeStep, setActiveStep] = useState(0);
 
     return (
@@ -109,24 +37,49 @@ const Hero = () => {
                                         text: "Travel by Air",
                                         bg: "#A0EBEB",
                                         textColor: "#4E4B66",
+
                                     },
-                                    { icon: "teenyicons:car-outline", text: "Travel by land", size: 20 },
-                                    { icon: "hugeicons:boat", text: "Travel by water" },
-                                ].map(({ icon, text, size = 24, bg, textColor }, index) => (
-                                    <div
-                                        key={index}
-                                        className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""
-                                            }`}
-                                        style={{
-                                            backgroundColor: bg || "transparent",
-                                            color: textColor || "inherit",
-                                        }}
-                                    >
-                                        <Icon icon={icon} width={size} height={size} />
-                                        <span className="text-[0.9rem]">{text}</span>
-                                    </div>
+                                    {
+                                        icon: "teenyicons:car-outline",
+                                        text: "Travel by land",
+                                        size: 20,
+                                        link: "/transportation/bus/bus-booking", // Route for Travel by Land
+                                    },
+                                    {
+                                        icon: "hugeicons:boat",
+                                        text: "Travel by water",
+                                        link: "/transportation/boat/boat-booking", // Route for Travel by Water
+                                    },
+                                ].map(({ icon, text, size = 24, bg, textColor, link }, index) => (
+                                    link ? (
+                                        <Link href={link} key={index} className="text-white no-underline">
+                                            <div
+                                                className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""}`}
+                                                style={{
+                                                    backgroundColor: bg || "transparent",
+                                                    color: textColor || "inherit",
+                                                }}
+                                            >
+                                                <Icon icon={icon} width={size} height={size} />
+                                                <span className="text-[0.9rem]">{text}</span>
+                                            </div>
+                                        </Link>
+                                    ) : (
+                                        <div
+                                            key={index}
+                                            className={`flex items-center gap-x-2 cursor-pointer transition-transform duration-300 hover:scale-105 ${bg ? "px-3 py-1 rounded-[30px]" : ""}`}
+                                            style={{
+                                                backgroundColor: bg || "transparent",
+                                                color: textColor || "inherit",
+                                            }}
+                                        >
+                                            <Icon icon={icon} width={size} height={size} />
+                                            <span className="text-[0.9rem]">{text}</span>
+                                        </div>
+                                    )
                                 ))}
                             </div>
+
 
                             <p className='text-white text-[1.9rem] mt-[45px] font-bold'>Flight</p>
                             <p className='text-[#6E7191] mt-[10px]'>Find the property that appeal to you the most </p>
@@ -153,7 +106,15 @@ const Hero = () => {
                         >
                             <div className={`h-[85%] flex flex-col py-[40px] w-[100%] bg-[#FCFCFC] -mt-[6px] rounded-[13px] rounded-tl-none`}>
 
-                                <Icon icon="cuida:arrow-left-outline" width="90" height="40" />
+                                <div className='w-full flex items-start mt-[30px] mb-[40px]'>
+                                    <Icon
+                                        icon="cuida:arrow-left-outline"
+                                        width="90"
+                                        height="40"
+                                        onClick={() => router.back()}
+                                        className='cursor-pointer'
+                                    />
+                                </div>
 
 
                                 <div className="flex mt-[40px] items-center justify-between w-[100%] px-8">
@@ -231,7 +192,7 @@ const Hero = () => {
                                                     <label htmlFor='First Name'>First Name</label>
                                                     <div className='bg-[#EFF0F6] box-border p-[20px] rounded-[10px] flex items-center gap-x-4 w-[300px] h-[50px]'>
                                                         <input type="select" placeholder='Enter First Name' className='outline-none border-none bg-transparent' />
-                                                       
+
                                                     </div>
                                                 </div>
 
@@ -254,15 +215,15 @@ const Hero = () => {
                                                 <div className='flex mt-[30px] flex-col items-start space-y-2'>
                                                     <label htmlFor='Phone Number'>Phone Number</label>
                                                     <div className='bg-[#EFF0F6] box-border p-[20px] rounded-[10px] flex items-center gap-x-2 w-[300px] h-[50px]'>
-                                                    <Icon icon="twemoji:flag-nigeria" width="30" height="30" />
-                                                    <Icon icon="ep:arrow-down" className='text-[#A0A3BD]' width="20" height="20" />
+                                                        <Icon icon="twemoji:flag-nigeria" width="30" height="30" />
+                                                        <Icon icon="ep:arrow-down" className='text-[#A0A3BD]' width="20" height="20" />
                                                         <input type="select" placeholder='select a gender' className='outline-none border-none bg-transparent' />
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
-                                           
-                                           
+
+
 
                                             <div className='min-h-[400px] h-auto w-[30%] bg-transparent flex flex-col items-start box-border'>
                                                 <div className='flex flex-col items-start space-y-2'>
@@ -277,7 +238,7 @@ const Hero = () => {
                                                     <label htmlFor='gender'>Last Name</label>
                                                     <div className='bg-[#EFF0F6] box-border p-[20px] rounded-[10px] flex items-center gap-x-4 w-[300px] h-[50px]'>
                                                         <input type="select" placeholder='Enter Last Name' className='outline-none border-none bg-transparent' />
-                                                       
+
                                                     </div>
                                                 </div>
 
@@ -297,7 +258,7 @@ const Hero = () => {
                                                     <p className='text-[0.8rem]'>Please input a valid Email</p>
                                                 </div>
 
-                                            
+
                                             </div>
                                         </div>
                                     </div>
