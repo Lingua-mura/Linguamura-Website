@@ -102,7 +102,6 @@ export const Header = () => {
 
         {/* Hamburger Menu */}
         <button
-          aria-label="Toggle menu"
           className="lg:hidden flex items-center justify-center p-2 text-gray-700 hover:text-primary"
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -122,10 +121,7 @@ export const Header = () => {
           <a href="#" className="text-xl font-medium text-gray-700">
             Our Services
           </a>
-          <select
-            aria-label="Select language"
-            className="text-gray-700 border rounded-md px-2 py-1 bg-transparent"
-          >
+          <select className="text-gray-700 border rounded-md px-2 py-1 bg-transparent">
             <option>English</option>
             <option>Spanish</option>
           </select>
