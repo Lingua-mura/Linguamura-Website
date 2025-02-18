@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import BackButton from "@/components/ui/backbutton";
 
 interface Movie {
   id: number;
@@ -83,21 +84,25 @@ const MoviesPage: React.FC = () => {
         </motion.div>
       </section>
 
+      <div>
+        <BackButton />
+      </div>
+
       <div className="bg-white text-black p-6">
-        <div className="flex justify-between items-start gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-4">
           {/* Left side content */}
-          <div className="flex-1">
-            <h1 className="text-2xl font-bold mb-2">
+          <div className="w-full md:flex-1 mb-4 md:mb-0">
+            <h1 className="text-xl md:text-2xl font-bold mb-2">
               Experience Cinema like never before
             </h1>
-            <p className="text-gray-400">
+            <p className="text-sm md:text-base text-gray-400">
               Stream the Best Blockbusters, Timeless classics, and Latest Gems
               anytime, anywhere
             </p>
           </div>
 
           {/* Right side search */}
-          <div className="w-1/3 relative">
+          <div className="w-full md:w-1/3 relative">
             <Icon
               icon="mdi:magnify"
               className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -112,7 +117,7 @@ const MoviesPage: React.FC = () => {
       </div>
 
       {/* Category Filters */}
-      <div className="flex overflow-x-auto mb-4">
+      <div className="flex overflow-x-auto mb-4 -mx-2 px-2">
         {categories.map((category) => (
           <motion.button
             key={category}
@@ -137,7 +142,7 @@ const MoviesPage: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {filteredMovies.map((movie) => (
-            <Link key={movie.id} href={`Subcategories/movies/${movie.id}`}>
+            <Link key={movie.id} href={`movies/${movie.id}`} className="no-underline">
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 className="relative bg-white rounded-lg overflow-hidden cursor-pointer"

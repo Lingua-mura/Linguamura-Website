@@ -11,10 +11,18 @@ const Homepage = () => {
     {
       title: "Movies",
       image: "/movies_img.svg",
-      route: "/Entertainment/AllCategories/Subcategories",
+      route: "/Entertainment/AllCategories/Subcategories/movies",
     },
-    { title: "Music", image: "/music_img.svg", route: "" },
-    { title: "Games", image: "/games_img.svg", route: "" },
+    {
+      title: "Music",
+      image: "/music_img.svg",
+      route: "/Entertainment/AllCategories/Subcategories/music",
+    },
+    {
+      title: "Games",
+      image: "/games_img.svg",
+      route: "/Entertainment/AllCategories/Subcategories/games",
+    },
   ];
 
   return (
@@ -40,14 +48,14 @@ const Homepage = () => {
       </motion.h2>
 
       {/* Sections */}
-      <div className="p-8 m-4">
+      <div className="p-4 md:p-8 m-2 md:m-4">
         {sections.map((section, index) => (
           <motion.div
             key={section.title}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 * (index + 1), duration: 0.5 }}
-            className="mt-6 cursor-pointer"
+            className="mt-8 cursor-pointer transform hover:scale-[1.02] transition-transform duration-200"
             onClick={() => section.route && router.push(section.route)}
           >
             <h3 className="text-lg font-semibold mb-2">{section.title}</h3>

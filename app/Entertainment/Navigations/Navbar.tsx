@@ -3,13 +3,14 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react";
 
 interface NavbarProps {
   title: string;
+  onSidebarToggle?: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ title }) => {
+const Navbar: React.FC<NavbarProps> = ({ title, onSidebarToggle }) => {
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -45,16 +46,18 @@ const Navbar: React.FC<NavbarProps> = ({ title }) => {
           </select>
         </div>
 
-        {/* Action Icons */}
         {[
-          { iconName: "mage:dots-menu", label: "Apps" },
+          { iconName: "mage:dots-menu", label: "Apps", onClick: onSidebarToggle },
           { iconName: "fluent:chat-16-regular", label: "History" },
-          { iconName: "lucide:bell", label: "Notifications" },
-        ].map(({ iconName }, index) => (
+          { iconName: "mdi:bell-outline", label: "Notifications" },
+        ].map(({ iconName, onClick }, index) => (
           <motion.button
             key={index}
+            onClick={onClick}
             whileHover={{ scale: 1.1 }}
-            className="p-1 rounded-md text-gray-600 hover:bg-gray-100"
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            className="p-1 rounded-md text-gray-600 hover:bg-gray-100 transition-all ease-in-out duration-150"
           >
             <Icon icon={iconName} className="w-5 h-5" />
           </motion.button>
@@ -66,7 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({ title }) => {
           alt="User Avatar"
           width={40}
           height={40}
-          className="rounded-full"
+          className="rounded-full m-2"
         />
       </div>
     </motion.header>

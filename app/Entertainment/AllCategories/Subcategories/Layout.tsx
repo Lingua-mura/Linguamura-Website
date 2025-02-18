@@ -13,8 +13,8 @@ export default function Layout({ children }: { children: ReactNode }) {
       {/* Sidebar - Hidden on Small Screens, Fixed on Larger Screens */}
       <aside
         className={`hidden md:flex h-screen ${
-          isSidebarCollapsed ? "w-32" : "w-64"
-        } bg-card border-r border-border overflow-y-scroll no-scrollbar transition-all duration-300`}
+          isSidebarCollapsed ? "w-[76px]" : "w-64"
+        } bg-card  overflow-y-scroll no-scrollbar transition-all duration-300`}
       >
         <Sidebar
           isCollapsed={isSidebarCollapsed}
@@ -25,7 +25,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       {/* Main Content Area */}
       <div
         className={`flex flex-col flex-1 overflow-hidden ${
-          isSidebarCollapsed ? "md:pl-20" : "md:pl-64"
+          isSidebarCollapsed ? "md:pl-0" : "md:pl-0"
         } transition-all duration-300`}
       >
         {/* Navbar */}
