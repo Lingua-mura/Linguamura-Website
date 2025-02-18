@@ -51,7 +51,7 @@ const recentlyPlayed: Track[] = [
     type: "Music",
     imageUrl: "/davido_timeless.svg",
     duration: "2:55",
-    genre: "Afrobeats",
+    genre: "Afrobeatss",
     isExplicit: true,
   },
   {
