@@ -19,7 +19,7 @@ const categories = [
         title: "Music & Arts",
         description: "Plan your next trip or commute with our transportation features",
         imageSrc: "/images/piano.png",
-        href: "/music-arts",
+        href: "/user/education/music",
     },
 ]
 
