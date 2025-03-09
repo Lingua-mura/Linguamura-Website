@@ -29,7 +29,7 @@ const UserLoginForm = () => {
             </Button>
 
             <div className="mt-4 text-center">
-                <span className="text-gray-700">Don't have an account? {"  "}
+                <span className="text-gray-700">Don&apos;t have an account? {"  "}
                     <Link href="/user/signup" className="text-primary font-bold">
                         Log in
                     </Link>

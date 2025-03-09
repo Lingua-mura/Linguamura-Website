@@ -19,7 +19,7 @@ const PropertyDetails = () => {
      <section>
      <div className="blog-container mt-4">
             <div className="map-container w-50">
-                <h6>What's around</h6>
+                <h6>What&apos;s around</h6>
                 <iframe src="https://www.google.com/maps?q=100+Momodu+St,+Ottawa+Off+Abekoko&output=embed" width="100%" height="250" allowfullscreen="" loading="lazy"></iframe>
                 <p className="mt-2"><i className="fas fa-map-marker-alt"></i> 100 Momodu St, Ottawa Off Abekoko bus stop</p>
                 <ul className="mt-3">
