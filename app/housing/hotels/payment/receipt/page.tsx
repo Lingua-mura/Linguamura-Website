@@ -48,7 +48,7 @@ const ReceiptPage = () => {
       
       // Reset button state
       buttonElement.innerText = originalText;
-      buttonElement.disabled = false;
+      (buttonElement as HTMLButtonElement).disabled = false;
       
       console.log("Receipt downloaded as PDF");
     } catch (error) {
@@ -59,7 +59,7 @@ const ReceiptPage = () => {
       const buttonElement = document.getElementById('download-button');
       if (buttonElement) {
         buttonElement.innerText = 'Download Receipt';
-        buttonElement.disabled = false;
+        (buttonElement as HTMLButtonElement).disabled = false;
       }
     }
   };

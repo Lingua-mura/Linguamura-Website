@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react";
 import { useRouter, useSearchParams } from 'next/navigation';
 import HousingSearch from '../../_components/housing-search';
 import TopPicks from '../_components/TopPicks';
-import { apartmentData } from "../page"
+import { apartmentData } from "../data"
 
 // Add this interface to your types or data file
 interface ApartmentData {

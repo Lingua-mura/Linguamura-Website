@@ -1,9 +1,9 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { DatePicker } from "@/components/ui/date-picker"; // Adjust the import path as necessary
 import { Label } from "../ui/label";
 
 interface DatePickerFieldProps {
-  name: string;
+  name?: string;
   label?: string;
   required?: boolean;
   minDate?: Date;
@@ -14,14 +14,14 @@ interface DatePickerFieldProps {
 }
 
 const DatePickerField = ({
-  name,
+  // name,
   label,
   required = true,
   minDate,
   maxDate,
-  placeholder,
+  // placeholder,
   bordered = true,
-  onDateChange,
+  // onDateChange,
 }: DatePickerFieldProps) => {
 
   return (

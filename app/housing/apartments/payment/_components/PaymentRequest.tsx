@@ -1,14 +1,11 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/navigation";
 import "react-datepicker/dist/react-datepicker.css";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { format } from "date-fns";
 
@@ -35,7 +32,7 @@ const PaymentRequest = () => {
   }, []);
 
   // Handle date change with correct type signature
-  const handleDateChange = (date: Date | null) => {
+  const handleDateChange = (date: Date | undefined) => {
     if (date) {
       setDates(date);
       setShowDatePicker(false);

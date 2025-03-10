@@ -4,7 +4,7 @@ interface CalendarIconProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
 }
 
-const CalendarIcon: React.FC<CalendarIconProps> = ({ color = "#8937CE", ...props }) => {
+const CalendarIcon: React.FC<CalendarIconProps> = ({ ...props }) => {
     return (
         <svg 
             xmlns="http://www.w3.org/2000/svg"

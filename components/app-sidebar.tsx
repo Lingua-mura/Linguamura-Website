@@ -4,7 +4,7 @@ import * as React from "react"
 import {
   Bell,
   Bookmark,
-  Bot,
+  // Bot,
   Gem,
   House,
   MessageCircleMore,
@@ -21,7 +21,7 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarRail,
+  // SidebarRail,
   SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar"

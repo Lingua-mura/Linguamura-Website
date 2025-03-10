@@ -4,7 +4,7 @@ interface MailIconProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
 }
 
-const MailIcon: React.FC<MailIconProps> = ({ color = "#8937CE", ...props }) => {
+const MailIcon: React.FC<MailIconProps> = ({ ...props }) => {
   return (
     <svg 
         xmlns="http://www.w3.org/2000/svg"

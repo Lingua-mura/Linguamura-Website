@@ -86,15 +86,11 @@ const ReviewCard: React.FC<ReviewProps> = ({ content, reviewer }) => {
 
 const PropertiesDetail: React.FC<PropertiesDetailProps> = ({
   title,
-  location,
-  description,
   rating,
   reviewCount,
   pricePerNight,
   mainImage,
   additionalImages,
-  host,
-  features,
   reviews,
   latitude,
   longitude,

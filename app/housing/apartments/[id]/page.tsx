@@ -4,7 +4,7 @@ import React from "react";
 import HousingSearch from "../../_components/housing-search";
 import ApartmentDetail from "../_components/ApartmentDetail";
 import TopPicks from "../_components/TopPicks";
-import { apartmentData } from "../page";
+import { apartmentData } from "../data";
 import AdBanner from "../../_components/AdBanner";
 
 const page = () => {

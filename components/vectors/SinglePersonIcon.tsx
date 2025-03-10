@@ -4,7 +4,7 @@ interface SinglePersonIconProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
 }
 
-const SinglePersonIcon: React.FC<SinglePersonIconProps> = ({ color = "#8937CE", ...props }) => {
+const SinglePersonIcon: React.FC<SinglePersonIconProps> = ({ ...props }) => {
   return (
     <svg 
         xmlns="http://www.w3.org/2000/svg"

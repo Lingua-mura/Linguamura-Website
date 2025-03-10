@@ -17,7 +17,7 @@ interface SliderProps {
   slidesPerView?: number;
   noArrows?: boolean; 
   noPagination?: boolean;
-  [key: string]: any; // Allow any other props to be passed (e.g., className, style)
+  [key: string]: string | number | boolean | ReactNode; // Allow specific types for other props (e.g., className, style)
 }
 
 const Slider: React.FC<SliderProps> = ({

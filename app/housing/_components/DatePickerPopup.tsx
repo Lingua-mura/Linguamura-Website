@@ -18,7 +18,7 @@ interface DatePickerProps {
 }
 
 const DatePickerWithPopover = forwardRef<HTMLDivElement, DatePickerProps>(
-  ({ value, onChange, className, placeholder = "Pick a date", hasError = false, disabled = false }, ref) => {
+  ({ value, onChange, className, placeholder = "Pick a date", hasError = false, disabled = false }) => {
     const [open, setOpen] = useState(false);
 
     const handleSelect = (date: Date | undefined) => {

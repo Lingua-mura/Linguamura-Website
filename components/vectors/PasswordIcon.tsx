@@ -4,7 +4,7 @@ interface PasswordIconProps extends React.SVGProps<SVGSVGElement> {
   color?: string;
 }
 
-const PasswordIcon: React.FC<PasswordIconProps> = ({ color = "#8937CE", ...props }) => {
+const PasswordIcon: React.FC<PasswordIconProps> = ({ ...props }) => {
     return (
         <svg 
         xmlns="http://www.w3.org/2000/svg"

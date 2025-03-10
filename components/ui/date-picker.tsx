@@ -14,7 +14,7 @@ interface DatePickerProps {
   value?: Date | null; // external value for the selected date
   onChange?: (date: Date | null) => void; // handler for when the date is changed
   inputFormat?: string; // date format for the input
-  renderInput?: (props: any) => React.JSX.Element; // function for custom input rendering
+  renderInput?: (props: { value: string; onChange: (selectedDate: Date | undefined) => void }) => React.JSX.Element; // function for custom input rendering
 }
 
 export function DatePicker({
@@ -69,7 +69,7 @@ export function DatePicker({
 
   const formattedDate = date ? format(date, inputFormat) : "";
 
-  const defaultRenderInput = (props: any) => (
+  const defaultRenderInput = () => (
     <div className="mt-5">
       <Label className={`text-sm font-medium`}>
         Date of Birth
@@ -87,7 +87,7 @@ export function DatePicker({
         {renderInput ? (
           renderInput({ value: formattedDate, onChange: handleSelect })
         ) : (
-          defaultRenderInput({})
+          defaultRenderInput()
         )}
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0">

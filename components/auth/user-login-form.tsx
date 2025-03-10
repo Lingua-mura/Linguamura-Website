@@ -2,7 +2,7 @@
 
 import InputField from "../forms/InputField";
 import MailIcon from "../vectors/MailIcon";
-import SinglePersonIcon from "../vectors/SinglePersonIcon";
+// import SinglePersonIcon from "../vectors/SinglePersonIcon";
 import PasswordIcon from "../vectors/PasswordIcon";
 import { Button } from "../ui/button";
 import Link from "next/link";

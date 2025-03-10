@@ -4,7 +4,7 @@ import React from "react";
 import HousingSearch from "../../_components/housing-search";
 import HostelDetail from "../_components/HostelDetail";
 import AdBanner from "../../_components/AdBanner";
-import { hotelData } from "../page";
+import { hotelData } from "../data";
 import NearByYou from "../_components/NearByYou";
 
 const page = () => {

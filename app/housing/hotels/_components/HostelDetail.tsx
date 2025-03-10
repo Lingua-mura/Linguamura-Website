@@ -9,13 +9,12 @@ import { useRouter } from "next/navigation";
 import DatePickerWithPopover from "../../_components/DatePickerPopup";
 
 // Fix for default marker icon issue with Leaflet
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png",
-  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
-});
+L.Icon.Default.prototype.options.iconRetinaUrl =
+  "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png";
+L.Icon.Default.prototype.options.iconUrl =
+  "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png";
+L.Icon.Default.prototype.options.shadowUrl =
+  "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png";
 
 interface ReviewProps {
   content: string;
@@ -583,7 +582,6 @@ const HostelDetail: React.FC<HostelDetailProps> = ({
                   className="border-0 rounded-none"
                   disabled={!checkIn}
                   // Disable dates before check-in
-                  minDate={checkIn || undefined}
                 />
               </div>
             </div>
