@@ -7,7 +7,7 @@ import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import HousingSearch from '../../_components/housing-search';
 import NearByYou, { PropertiesData } from '../_components/NearByYou';
-import { propertiesData } from '../page';
+import { propertiesData } from '../data';
 
 interface FilterState {
   priceRange: string;
