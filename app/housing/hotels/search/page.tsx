@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Icon } from "@iconify/react";
 import { useSearchParams } from 'next/navigation';
 import HousingSearch from '../../_components/housing-search';
-import { hotelData } from '../page';
+import { hotelData } from '../data';
 import NearByYou, { HotelData } from '../_components/NearByYou';
 import { useRouter } from 'next/navigation';
 
