@@ -10,6 +10,13 @@ import 'swiper/css/pagination'
 
 import '@/components/custom/slider/slider.css';
 
+import { SwiperOptions } from 'swiper/types';
+
+interface Breakpoints {
+  [key: number]: SwiperOptions;
+  [key: string]: SwiperOptions;
+}
+
 interface SliderProps {
   children: ReactNode;
   autoScroll?: boolean;
@@ -17,7 +24,8 @@ interface SliderProps {
   slidesPerView?: number;
   noArrows?: boolean; 
   noPagination?: boolean;
-  [key: string]: string | number | boolean | ReactNode; // Allow specific types for other props (e.g., className, style)
+  breakpoints?: Breakpoints;
+  [key: string]: any; // Allow specific types for other props (e.g., className, style)
 }
 
 const Slider: React.FC<SliderProps> = ({
@@ -27,6 +35,7 @@ const Slider: React.FC<SliderProps> = ({
   slidesPerView = 5,
   noArrows = false,
   noPagination = false,
+  breakpoints,
   ...props
 }) => {
   return (
@@ -40,6 +49,7 @@ const Slider: React.FC<SliderProps> = ({
         autoplay={autoScroll ? { delay: scrollInterval } : false}
         navigation={!noArrows}
         freeMode
+        breakpoints={breakpoints}
         {...props}
         className="w-full !pb-14"
       >
