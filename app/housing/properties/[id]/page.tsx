@@ -5,7 +5,7 @@ import HousingSearch from "../../_components/housing-search";
 import AdBanner from "../../_components/AdBanner";
 import NearByYou from "../_components/NearByYou";
 import PropertiesDetail from "../_components/propertiesDetail";
-import { propertiesData } from "../page";
+import { propertiesData } from "../data";
 
 const page = () => {
   return (
