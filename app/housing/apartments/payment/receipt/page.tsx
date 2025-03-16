@@ -59,7 +59,7 @@ const ReceiptPage = () => {
       const buttonElement = document.getElementById('download-button');
       if (buttonElement) {
         buttonElement.innerText = 'Download Receipt';
-        buttonElement.disabled = false;
+        // buttonElement. = false;
       }
     }
   };

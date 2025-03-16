@@ -25,7 +25,7 @@ interface SliderProps {
   noArrows?: boolean; 
   noPagination?: boolean;
   breakpoints?: Breakpoints;
-  [key: string]: any; // Allow specific types for other props (e.g., className, style)
+  key?: number; // Allow specific types for other props (e.g., className, style)
 }
 
 const Slider: React.FC<SliderProps> = ({

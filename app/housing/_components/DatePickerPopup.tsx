@@ -36,7 +36,7 @@ const DatePickerWithPopover = forwardRef<HTMLDivElement, DatePickerProps>(
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
-            variant="outline"
+            variant="default"
             className={inputClassName}
             disabled={disabled}
             onClick={() => setOpen(true)}
