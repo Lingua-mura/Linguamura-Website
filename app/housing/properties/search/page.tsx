@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Icon } from "@iconify/react";
-import { useSearchParams } from 'next/navigation';
+// import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import HousingSearch from '../../_components/housing-search';
 import NearByYou, { PropertiesData } from '../_components/NearByYou';
@@ -16,7 +16,7 @@ interface FilterState {
 }
 
 const SearchPage = () => {
-  const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
   const [searchResults, setSearchResults] = useState<PropertiesData[]>(propertiesData); // Initialize with all properties
   const [filters, setFilters] = useState<FilterState>({
     priceRange: '',
@@ -32,19 +32,19 @@ const SearchPage = () => {
   }, []);
 
   // Handle initial search from URL params
-  useEffect(() => {
-    const location = searchParams.get('location');
-    const date = searchParams.get('date');
-    const rooms = searchParams.get('rooms');
+  // useEffect(() => {
+  //   const location = searchParams.get('location');
+  //   const date = searchParams.get('date');
+  //   const rooms = searchParams.get('rooms');
 
-    if (location || date || rooms) {
-      handleSearch({
-        location: location || '',
-        date: date || '',
-        rooms: rooms || ''
-      });
-    }
-  }, [searchParams]); // Add searchParams as dependency
+  //   if (location || date || rooms) {
+  //     handleSearch({
+  //       location: location || '',
+  //       date: date || '',
+  //       rooms: rooms || ''
+  //     });
+  //   }
+  // }, [searchParams]); // Add searchParams as dependency
 
   // Update handleSearch to apply filters
   const handleSearch = (searchData: { location: string; date: string; rooms: string }) => {
@@ -98,13 +98,13 @@ const SearchPage = () => {
   };
 
   // Update the useEffect for filters
-useEffect(() => {
-  handleSearch({
-    location: searchParams.get('location') || '',
-    date: searchParams.get('date') || '',
-    rooms: searchParams.get('rooms') || ''
-  });
-}, [filters, searchParams]); // Add searchParams to dependencies
+// useEffect(() => {
+//   handleSearch({
+//     location: searchParams.get('location') || '',
+//     date: searchParams.get('date') || '',
+//     rooms: searchParams.get('rooms') || ''
+//   });
+// }, [filters, searchParams]); // Add searchParams to dependencies
 
 const handleBackClick = () => {
   router.back();
@@ -116,7 +116,7 @@ const handleBackClick = () => {
         name="Properties" 
         tagline="We look forward to welcoming you onboard." 
         searchRoute="/housing/properties/search" 
-        onSearch={handleSearch}
+        // onSearch={handleSearch}
       />
 
 <div className="container mb-10 md:px-4 flex flex-wrap justify-start items-center gap-4">

@@ -31,7 +31,7 @@ const UserLoginForm = () => {
             <div className="mt-4 text-center">
                 <span className="text-gray-700">Don&apos;t have an account? {"  "}
                     <Link href="/user/signup" className="text-primary font-bold">
-                        Log in
+                        Sign up
                     </Link>
                 </span>
             </div>
