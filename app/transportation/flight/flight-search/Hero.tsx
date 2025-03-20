@@ -43,10 +43,10 @@ const CalendarComponent = () => {
                     <Icon icon="solar:alt-arrow-left-outline" width="24" height="24" />
                 </button>
                 <div className="flex items-center justify-between w-full mx-4 gap-2">
-                    {daysInMonth.slice(startIndex, startIndex + visibleDays).map((day,index) => (
-                        <Link className='no-underline' href='/transportation/flight/flight-details'>
+                    {daysInMonth.slice(startIndex, startIndex + visibleDays).map((day) => (
+                        <Link key={day} className='no-underline' href='/transportation/flight/flight-details'>
                             <div
-                                key={index}
+                                
                                 className="flex flex-1 flex-col items-center justify-center text-center py-3 rounded-md bg-[#D9DBE9] cursor-pointer h-[170px] w-[105px] hover:bg-[#00BBBB] hover:text-white transition-all duration-300"
                             >
                                 <div className='flex flex-col items-center justify-center'>
