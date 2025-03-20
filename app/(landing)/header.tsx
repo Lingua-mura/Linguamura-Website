@@ -82,23 +82,23 @@ export const Header = () => {
             </DropdownMenu>
           </div>
           <div className="flex items-center">
-            <div className="flex items-center mr-7">
-              <Image src="/icons/intl.svg" alt="Icon" width={20} height={20} />
-              <Select>
-                <SelectTrigger className="w-[100px] border-none ring-none">
-                  <SelectValue placeholder="English" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="en">English</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <Link href="/user/signin" className={`${buttonVariants({ variant: "secondary", size: "lg" })} w-40 mr-2`}>
-              Log in
-            </Link>
-            <Link href="/user/signup" className={buttonVariants({ variant: "primary", size: "lg" })}>
-              Sign up for free
-            </Link>
+              <div className="flex items-center mr-7">
+                <Image src="/icons/intl.svg" alt="Icon" width={20} height={20} />
+                <Select>
+                    <SelectTrigger className="w-[100px] border-none ring-none">
+                        <SelectValue placeholder="English" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectItem value="en">English</SelectItem>
+                    </SelectContent>
+                </Select>
+              </div>
+              <Link href={"/user/signin"} className={`${buttonVariants({ variant: "secondary", size: "lg" })} w-40 mr-2`}>
+                Log in
+              </Link>
+              <Link href={"/user/signup"} className={buttonVariants({ variant: "primary", size: "lg" })}>
+                  Sign up for free
+              </Link>
           </div>
         </nav>
 
