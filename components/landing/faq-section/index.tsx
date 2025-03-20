@@ -47,7 +47,7 @@ const FAQSection: React.FC = () => {
         />
         {/* "Let's Chat" Button */}
         <div className="absolute bottom-4 -left-5 bg-primary text-white px-4 py-2 rounded-full text-lg">
-          Let's Chat
+          Let&apos;s Chat
         </div>
       </div>
 

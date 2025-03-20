@@ -27,7 +27,7 @@ export default function Home() {
         <div className="px-6 min-h-screen relative md:max-w-[1272px] mx-auto">
           <div className="mb-[3rem] mt-20 max-md:mt-10">
             <h2 className="text-gray-900 font-bold text-xl lg:text-4xl mb-3">
-              What's LinguaMura?
+              What&apos;s LinguaMura?
             </h2>
             <p className="text-sm md:text-md">
               Linguamura simplifies your life by providing a wide range of
@@ -272,7 +272,7 @@ export default function Home() {
               FAQs
             </h2>
             <p className="text-sm md:text-md">
-            Quick answers to questions you may have about <span className="text-primary">LinguaMura</span> and billing. Can’t find what you're looking? Chat us up
+            Quick answers to questions you may have about <span className="text-primary">LinguaMura</span> and billing. Can’t find what you&apos;re looking? Chat us up
             </p>
           </div>
           <FAQSection />

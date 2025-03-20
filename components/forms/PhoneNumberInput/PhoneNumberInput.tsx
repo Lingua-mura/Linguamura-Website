@@ -1,5 +1,5 @@
 // import {Controller, get, useFormContext} from "react-hook-form";
-import {isValidPhoneNumber} from "react-phone-number-input";
+// import {isValidPhoneNumber} from "react-phone-number-input";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import "./style.css";
@@ -10,7 +10,7 @@ interface PhoneNumberInputProps {
   required?: boolean;
 }
 
-const PhoneNumberInput: React.FC<PhoneNumberInputProps> = ({label = "Phone Number", name, required = true}) => {
+const PhoneNumberInput: React.FC<PhoneNumberInputProps> = ({label = "Phone Number", name}) => {
 
   return (
     <div className="mt-4">

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import './cart.css';
-import HeartIcon from './HeartIcon';
+// import HeartIcon from './HeartIcon';
 
 interface Product {
     id: number;

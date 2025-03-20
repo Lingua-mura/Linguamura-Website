@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
@@ -18,7 +18,7 @@ export const Footer = () => {
             <span className="font-bold text-lg text-black">LinguaMura</span>
           </div>
           <p className="mb-4">
-            Whether you're a beginner or advanced learner, customize your
+            Whether you&apos;re a beginner or advanced learner, customize your
             learning journey and take advantage of scholarship opportunities to
             make language education accessible for everyone. Start your
             linguistic adventure with LinguaMura today!

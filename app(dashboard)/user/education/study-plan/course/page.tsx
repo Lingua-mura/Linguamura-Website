@@ -1,4 +1,6 @@
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button"
+
 
 // Inside your CoursePage component, replace the coins emoji div with:
 <Dialog>
@@ -16,7 +18,7 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
       <Button 
         variant="primary"
         className="w-full"
-        onClick={() => router.push('/shop')}
+        // onClick={() => router.push('/shop')}
       >
         Buy More
       </Button>
