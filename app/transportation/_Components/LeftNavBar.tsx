@@ -55,7 +55,7 @@ const LeftNavBar = () => {
           </div>
 
           <div className={`mt-[30px] w-[100%] space-y-[25px] flex flex-col justify-start ${isCollapsed ? 'items-center' : 'items-start'}`}>
-            {menuItems.map((item: any, index) => (
+            {menuItems.map((item, index) => (
               <div key={index} className={`flex items-center ${isCollapsed ? 'justify-center w-[45px]' : 'gap-x-2 w-full px-3'} py-2 rounded-lg 
               hover:bg-sidebar-accent hover:text-sidebar-accent-foreground
               transform hover:scale-105 hover:translate-x-2

@@ -2,22 +2,12 @@
 import React, { useState } from 'react'
 import Header from './Header'
 import { Icon } from '@iconify/react';
-import Image from 'next/image'
 import { useSidebar } from '../../_Context/SidebarContext'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 const Hero = () => {
     const { isCollapsed } = useSidebar();
-    const steps = [
-        "Flight Section",
-        "Passenger",
-        "Additional Service",
-        "Payment",
-        "Confirmation",
-    ];
-
-    const [activeStep, setActiveStep] = useState(0);
     const router = useRouter()
     return (
         <div className={`h-screen flex flex-col transition-all duration-300 ease-in-out border-[#D9DBE9] border-[0.5px] ${isCollapsed ? 'w-[calc(100vw-100px)]' : 'w-[calc(100vw-280px)]'}`}>

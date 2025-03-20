@@ -11,10 +11,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@hookform/resolvers": "^3.10.0",
-<<<<<<< HEAD
-=======
     "@iconify/icons-mdi": "^1.2.48",
->>>>>>> c3ead8ce50f26f6a25a03086b0200ebbb8ad57e0
     "@iconify/react": "^5.2.0",
     "@radix-ui/react-accordion": "^1.2.2",
     "@radix-ui/react-avatar": "^1.1.2",

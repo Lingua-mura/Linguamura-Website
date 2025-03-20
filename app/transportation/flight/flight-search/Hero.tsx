@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import Header from './Header'
 import { Icon } from '@iconify/react';
-import Image from 'next/image'
 import { useSidebar } from '../../_Context/SidebarContext'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
@@ -44,10 +43,10 @@ const CalendarComponent = () => {
                     <Icon icon="solar:alt-arrow-left-outline" width="24" height="24" />
                 </button>
                 <div className="flex items-center justify-between w-full mx-4 gap-2">
-                    {daysInMonth.slice(startIndex, startIndex + visibleDays).map((day) => (
+                    {daysInMonth.slice(startIndex, startIndex + visibleDays).map((day,index) => (
                         <Link className='no-underline' href='/transportation/flight/flight-details'>
                             <div
-                                key={day}
+                                key={index}
                                 className="flex flex-1 flex-col items-center justify-center text-center py-3 rounded-md bg-[#D9DBE9] cursor-pointer h-[170px] w-[105px] hover:bg-[#00BBBB] hover:text-white transition-all duration-300"
                             >
                                 <div className='flex flex-col items-center justify-center'>
@@ -94,7 +93,7 @@ const Hero = () => {
         "Confirmation",
     ];
 
-    const [activeStep, setActiveStep] = useState(0);
+    const activeStep = 0;
     const router = useRouter()
     return (
         <div className={`h-screen flex flex-col transition-all duration-300 ease-in-out border-[#D9DBE9] border-[0.5px] ${isCollapsed ? 'w-[calc(100vw-100px)]' : 'w-[calc(100vw-280px)]'}`}>

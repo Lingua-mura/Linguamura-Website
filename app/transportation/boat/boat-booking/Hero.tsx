@@ -2,7 +2,7 @@
 import React from 'react'
 import Header from './Header'
 import { Icon } from '@iconify/react';
-import Image from 'next/image'
+// import Image from 'next/image'
 import { useSidebar } from '../../_Context/SidebarContext'
 import Link from 'next/link';
 const Hero = () => {
