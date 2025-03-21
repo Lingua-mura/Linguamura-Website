@@ -99,16 +99,27 @@ body {
   }
 }
 
-@layer utilities{
-  .no-scrollbar ::-webkit-scrollbar{
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-  
   .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-    overflow: -moz-scrollbars-none;  /* Old Firefox */
-    -webkit-overflow-scrolling: touch;  /* iOS */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
+}
 
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

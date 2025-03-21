@@ -1,4 +1,4 @@
-import Link from "next/link";
+// import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import PricingCard from "@/components/custom/pricing-card";
 

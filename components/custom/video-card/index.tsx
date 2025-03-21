@@ -8,7 +8,7 @@ interface VideoCardProps {
   onClick: () => void;
 }
 
-const VideoCard: React.FC<VideoCardProps> = ({ title, thumbnail, onClick }) => {
+const VideoCard: React.FC<VideoCardProps> = ({ title, thumbnail }) => {
   return (
     <div className="max-w-lg w-full bg-white rounded-lg overflow-hidden shadow-lg">
       <div className="relative">

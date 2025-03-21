@@ -5,7 +5,7 @@ const OrderSummary = () => {
     <div className="card-section">
       <h5 className="section-title">Order summary</h5>
       <div className="d-flex justify-content-between">
-        <span>Item's total (1)</span>
+        <span>Item&apos;s total (1)</span>
         <span>N150,000</span>
       </div>
       <div className="d-flex justify-content-between">
