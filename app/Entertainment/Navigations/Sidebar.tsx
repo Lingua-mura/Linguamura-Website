@@ -17,21 +17,21 @@ interface SidebarProps {
 
 export default function Sidebar({ isCollapsed, toggleCollapse }: SidebarProps) {
   const sidebarItems: SidebarItem[] = [
-    { icon: "lucide:home", text: "Home", href: "/" },
-    { icon: "lucide:wallet", text: "Wallet", href: "/wallet" },
-    { icon: "lucide:users", text: "Friends", href: "/friends" },
-    { icon: "lucide:message-square", text: "Messages", href: "/messages" },
-    { icon: "lucide:bookmark", text: "Bookmarks", href: "/bookmarks" },
+    { icon: "lucide:home", text: "Home", href: "#" },
+    { icon: "lucide:wallet", text: "Wallet", href: "#" },
+    { icon: "lucide:users", text: "Friends", href: "#" },
+    { icon: "lucide:message-square", text: "Messages", href: "#" },
+    { icon: "lucide:bookmark", text: "Bookmarks", href: "#" },
     {
       icon: "lucide:gem",
       text: "Go Premium",
-      href: "/premium",
+      href: "#",
       iconColor: "text-blue-500",
     },
-    { icon: "lucide:refresh-cw", text: "Updates", href: "/updates" },
-    { icon: "lucide:bell", text: "Notifications", href: "/notifications" },
-    { icon: "lucide:settings", text: "Settings", href: "/settings" },
-    { icon: "lucide:help-circle", text: "Help Center", href: "/help" },
+    { icon: "lucide:refresh-cw", text: "Updates", href: "#" },
+    { icon: "lucide:bell", text: "Notifications", href: "#" },
+    { icon: "lucide:settings", text: "Settings", href: "#" },
+    { icon: "lucide:help-circle", text: "Help Center", href: "#" },
   ];
 
   return (
