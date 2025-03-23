@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import CompletionScreen from "@/components/custom/catalogue/completeScreen";
-import Image from 'next/image';
+// import Image from 'next/image';
 import { ChevronLeft } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 

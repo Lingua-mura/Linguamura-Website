@@ -9,7 +9,7 @@ import { Progress } from '@/components/ui/progress'
 import type { UserLanguagePreferences } from '@/components/custom/catalogue/eduQuestionnaire'
 import { StreakDialog } from '@/components/streak/streak-dialog'
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
-import LearningModule from '@/components/modules/learning'
+// import LearningModule from '@/components/modules/learning'
 
 interface Lesson {
     id: number
@@ -72,70 +72,70 @@ const chapters: Chapter[] = [
     }
 ]
 
-const questions = [
-    {
-        id: 1,
-        heading: 'Listen carefully',
-        description: 'Listen to the audio and answer the question.',
-        question: 'What is the French word for "hello"?',
-        options: ['Bonjour', 'Au revoir', 'Merci', 'Oui'],
-        correctAnswer: 'Bonjour'
-    },
-    {
-        id: 2,
-        question: 'What is the French word for "thank you"?',
-        options: ['Merci', 'Au revoir', 'Bonjour', 'Oui'],
-        correctAnswer: 'Merci'
-    },
-    {
-        id: 3,
-        question: 'What is the French word for "yes"?',
-        options: ['Oui', 'Non', 'Merci', 'Bonjour'],
-        correctAnswer: 'Oui'
-    },
-    {
-        id: 4,
-        question: 'What is the French word for "goodbye"?',
-        options: ['Au revoir', 'Bonjour', 'Merci', 'Oui'],
-        correctAnswer: 'Au revoir'
-    },
-    {
-        id: 5,
-        question: 'What is the French word for "please"?',
-        options: ['S\'il vous plaît', 'Merci', 'Bonjour', 'Oui'],
-        correctAnswer: 'S\'il vous plaît'
-    },
-    {
-        id: 6,
-        question: 'What is the French word for "no"?',
-        options: ['Non', 'Oui', 'Merci', 'Bonjour'],
-        correctAnswer: 'Non'
-    },
-    {
-        id: 7,
-        question: 'What is the French word for "excuse me"?',
-        options: ['Excusez-moi', 'Merci', 'Bonjour', 'Oui'],
-        correctAnswer: 'Excusez-moi'
-    },
-    {
-        id: 8,
-        question: 'What is the French word for "good night"?',
-        options: ['Bonne nuit', 'Merci', 'Bonjour', 'Oui'],
-        correctAnswer: 'Bonne nuit'
-    },
-    {
-        id: 9,
-        question: 'What is the French word for "good morning"?',
-        options: ['Bonjour', 'Merci', 'Au revoir', 'Oui'],
-        correctAnswer: 'Bonjour'
-    },
-    {
-        id: 10,
-        question: 'What is the French word for "good evening"?',
-        options: ['Bonsoir', 'Merci', 'Au revoir', 'Oui'],
-        correctAnswer: 'Bonsoir'
-    }
-]
+// const questions = [
+//     {
+//         id: 1,
+//         heading: 'Listen carefully',
+//         description: 'Listen to the audio and answer the question.',
+//         question: 'What is the French word for "hello"?',
+//         options: ['Bonjour', 'Au revoir', 'Merci', 'Oui'],
+//         correctAnswer: 'Bonjour'
+//     },
+//     {
+//         id: 2,
+//         question: 'What is the French word for "thank you"?',
+//         options: ['Merci', 'Au revoir', 'Bonjour', 'Oui'],
+//         correctAnswer: 'Merci'
+//     },
+//     {
+//         id: 3,
+//         question: 'What is the French word for "yes"?',
+//         options: ['Oui', 'Non', 'Merci', 'Bonjour'],
+//         correctAnswer: 'Oui'
+//     },
+//     {
+//         id: 4,
+//         question: 'What is the French word for "goodbye"?',
+//         options: ['Au revoir', 'Bonjour', 'Merci', 'Oui'],
+//         correctAnswer: 'Au revoir'
+//     },
+//     {
+//         id: 5,
+//         question: 'What is the French word for "please"?',
+//         options: ['S\'il vous plaît', 'Merci', 'Bonjour', 'Oui'],
+//         correctAnswer: 'S\'il vous plaît'
+//     },
+//     {
+//         id: 6,
+//         question: 'What is the French word for "no"?',
+//         options: ['Non', 'Oui', 'Merci', 'Bonjour'],
+//         correctAnswer: 'Non'
+//     },
+//     {
+//         id: 7,
+//         question: 'What is the French word for "excuse me"?',
+//         options: ['Excusez-moi', 'Merci', 'Bonjour', 'Oui'],
+//         correctAnswer: 'Excusez-moi'
+//     },
+//     {
+//         id: 8,
+//         question: 'What is the French word for "good night"?',
+//         options: ['Bonne nuit', 'Merci', 'Bonjour', 'Oui'],
+//         correctAnswer: 'Bonne nuit'
+//     },
+//     {
+//         id: 9,
+//         question: 'What is the French word for "good morning"?',
+//         options: ['Bonjour', 'Merci', 'Au revoir', 'Oui'],
+//         correctAnswer: 'Bonjour'
+//     },
+//     {
+//         id: 10,
+//         question: 'What is the French word for "good evening"?',
+//         options: ['Bonsoir', 'Merci', 'Au revoir', 'Oui'],
+//         correctAnswer: 'Bonsoir'
+//     }
+// ]
 
 export default function CoursePage() {
     const router = useRouter()

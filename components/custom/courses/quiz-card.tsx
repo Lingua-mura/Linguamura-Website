@@ -10,7 +10,7 @@ export function QuizCard() {
                     <h3 className="font-semibold">Are you ready to practice?</h3>
                     <p className="text-sm text-muted-foreground">10 questions</p>
                     <Button variant="primary" className="mt-2">
-                        <Link href="/user/premium">Let's go!</Link>
+                        <Link href="/user/premium">Let&apos;s go!</Link>
                     </Button>
                 </CardContent>
             </Card>

@@ -41,7 +41,7 @@ export function QuestionsTab({ comments }: QuestionsTabProps) {
             </div>
 
             <div className="space-y-4">
-                <h3 className="font-medium text-lg">Other Learners' Responses</h3>
+                <h3 className="font-medium text-lg">Other Learners&apos; Responses</h3>
                 
                 {comments.map((comment) => (
                     <div key={comment.id} className="border rounded-lg p-4 space-y-4">

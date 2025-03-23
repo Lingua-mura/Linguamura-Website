@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import { usePathname, useRouter } from "next/navigation"
+// import { usePathname, useRouter } from "next/navigation"
 
 interface LearningOption {
   id: string
@@ -64,8 +64,8 @@ const learningOptions: LearningOption[] = [
 
 export default function LearnPage() {
 
-    const pathName = usePathname()
-    const router = useRouter()
+    // const pathName = usePathname()
+    // const router = useRouter()
 
     
   return (

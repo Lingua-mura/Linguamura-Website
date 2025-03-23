@@ -1,7 +1,7 @@
 import { Lock, PlayCircle, FileText, CheckCircle, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { LessonItem } from "@/types/lesson"
-import { QuizCard } from "./quiz-card"
+// import { QuizCard } from "./quiz-card"
 import { usePathname, useRouter } from "next/navigation"
 
 interface CourseSidebarProps {

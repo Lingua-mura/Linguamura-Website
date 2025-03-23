@@ -3,19 +3,22 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
-import { ChevronDown, ChevronLeft, Lock, Plus, Trophy } from 'lucide-react'
+import { ChevronLeft, Lock, Trophy } from 'lucide-react'
 import Image from 'next/image'
 import { Progress } from '@/components/ui/progress'
 import type { UserLanguagePreferences } from '@/components/custom/catalogue/eduQuestionnaire'
-import { StreakDialog } from '@/components/streak/streak-dialog'
+// import { StreakDialog } from '@/components/streak/streak-dialog'
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
-import LearningModule from '@/components/modules/learning'
+// import LearningModule from '@/components/modules/learning'
 import RightSidebar from './right-sidebar'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { log } from 'console'
+// import { log } from 'console'
+import { Chapter } from '@/types/chapter'
+import { LessonItem } from '@/types/lesson'
 
-export default function CoursePage({ chapters }: { chapters: any }) {
+
+export default function CoursePage({ chapters }: { chapters: Chapter[] }) {
     const pathname = usePathname()
     console.log(pathname);
     
@@ -52,7 +55,7 @@ export default function CoursePage({ chapters }: { chapters: any }) {
                     </div>
                 </div>
 
-                {chapters.map((chapter: any) => (
+                {chapters.map((chapter: Chapter) => (
                     <div key={chapter.id} className="mb-8 border border-t-0 rounded-2xl">
                         <div className="flex items-center justify-between mb-4 bg-primary py-4 px-2 rounded-t-2xl">
                             <h2 className="text-xl font-semibold">Chapter {chapter.id}: {chapter.title}</h2>
@@ -64,12 +67,12 @@ export default function CoursePage({ chapters }: { chapters: any }) {
                         </div>
 
                         <div className="space-y-4">
-                            {chapter.lessons.map((lesson: any) => (
+                            {chapter.lessons.map((lesson: LessonItem) => (
                                 <Dialog key={lesson.id}>
                                     <DialogTrigger asChild>
                                         <div
                                             key={lesson.id}
-                                            className={`flex items-center gap-4 p-4 rounded-lg ${lesson.locked ? 'opacity-50 cursor-not-allowed' : 'hover:border-teal-400 cursor-pointer'} transition-colors`}
+                                            className={`flex items-center gap-4 p-4 rounded-lg ${lesson.isLocked ? 'opacity-50 cursor-not-allowed' : 'hover:border-teal-400 cursor-pointer'} transition-colors`}
                                         >
                                             {lesson.icon ? (
                                                 <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center border-8 relative">
@@ -80,7 +83,7 @@ export default function CoursePage({ chapters }: { chapters: any }) {
                                                         height={64}
                                                         className='rounded-full m-2'
                                                     />
-                                                    {lesson.locked && (
+                                                    {lesson.isLocked && (
                                                         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
                                                             <Lock />
                                                         </div>
@@ -93,7 +96,7 @@ export default function CoursePage({ chapters }: { chapters: any }) {
                                             </div>
                                         </div>
                                     </DialogTrigger>
-                                    {!lesson.locked ? (
+                                    {!lesson.isLocked ? (
                                         <DialogContent className="w-[350px] bg-primary">
                                             <div className="flex flex-col items-center pt-6 pb-8 px-6">
                                                 <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-white mb-4">

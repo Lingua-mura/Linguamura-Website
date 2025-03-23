@@ -1,10 +1,12 @@
 export interface LessonItem {
-    id: string
+    id: number
     title: string
-    duration: string
+    duration?: string
     isCompleted?: boolean
     isLocked?: boolean
-    type: "lesson" | "quiz" | "video"
+    icon?: string
+    description?: string
+    type?: "lesson" | "quiz" | "video"
   }
   
   export interface Tab {
