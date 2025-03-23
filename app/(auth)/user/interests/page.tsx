@@ -1,5 +1,5 @@
 import Image from "next/image";
-import UserLoginForm from "@/components/auth/user-login-form";
+// import UserLoginForm from "@/components/auth/user-login-form";
 import MultipleSelectForm from "@/components/auth/interests-form";
 
 const Interests = () => {

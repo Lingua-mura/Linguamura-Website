@@ -22,15 +22,15 @@ const categories = [
     title: "Marketplace",
     description: "With LinguaMura, discover new products and services in our marketplace.",
     image: "/images/shopping-landing.png",
-    action: "Shop",
-    href: "/shop",
+    action: "Marketplace",
+    href: "/marketplace/Home",
   },
   {
     title: "Transport",
     description: "Plan your next trip or commute with our transportation features.",
     image: "/images/cheerful-people.png",
     action: "Transport",
-    href: "/transport",
+    href: "/transportation",
   },
   {
     title: "Housing",
@@ -44,7 +44,7 @@ const categories = [
     description: "Enjoy your favorite movies, music, and games in our entertainment section.",
     image: "/images/entertainment.png",
     action: "Entertainment",
-    href: "/entertainment",
+    href: "/Entertainment/AllCategories/Subcategories",
   },
 ]
 

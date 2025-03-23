@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowDown, ChevronDown, Menu } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import {
   Select,
@@ -28,55 +28,57 @@ export const Header = () => {
     <header className="fixed top-0 w-full bg-white shadow-md z-50">
       <div className="flex items-center justify-between px-4 py-5 md:px-8">
         {/* Logo */}
-        <div className="flex items-center">
-          <Image
-            src="/linguamura_logo.svg" // Replace with your logo path
-            alt="LinguaMura Logo"
-            width={40}
-            height={40}
-          />
-          <span className="font-bold text-lg">LinguaMura</span>
-        </div>
+        <Link href="/" className="no-underline text-black">
+          <div className="flex items-center">
+            <Image
+              src="/linguamura_logo.svg" // Replace with your logo path
+              alt="LinguaMura Logo"
+              width={40}
+              height={40}
+            />
+            <span className="font-bold text-lg">LinguaMura</span>
+          </div>
+        </Link>
         {/* Navigation links */}
         <nav className="hidden lg:flex flex-grow items-center justify-between">
           <div className="ml-20 flex space-x-7 items-center">
             <Link href={""} className="font-semibold hover:text-primary transition-all">
-                How it works
+              How it works
             </Link>
             <DropdownMenu>
-                <DropdownMenuTrigger className="flex items-center space-x-4 font-semibold text-black">
-                    Our Services
-                    <ChevronDown />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="min-w-[200px]">
-                    <DropdownMenuLabel>
-                        LinguaMura Education
-                    </DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                        LinguaMura Health
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                        LinguaMura Housing
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                        LinguaMura Marketplace
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                        LinguaMura Travel
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                        LinguaMura Entertainment
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                        LinguaMura Communities
-                    </DropdownMenuItem>
-                </DropdownMenuContent>
+              <DropdownMenuTrigger className="flex items-center space-x-4 font-semibold text-black">
+                Our Services
+                <ChevronDown />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="min-w-[200px]">
+                <DropdownMenuLabel>
+                  LinguaMura Education
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  LinguaMura Health
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  LinguaMura Housing
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  LinguaMura Marketplace
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  LinguaMura Travel
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  LinguaMura Entertainment
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  LinguaMura Communities
+                </DropdownMenuItem>
+              </DropdownMenuContent>
             </DropdownMenu>
           </div>
           <div className="flex items-center">
@@ -91,10 +93,10 @@ export const Header = () => {
                     </SelectContent>
                 </Select>
               </div>
-              <Link href={""} className={`${buttonVariants({ variant: "secondary", size: "lg" })} w-40 mr-2`}>
+              <Link href={"/user/signin"} className={`${buttonVariants({ variant: "secondary", size: "lg" })} w-40 mr-2`}>
                 Log in
               </Link>
-              <Link href={""} className={buttonVariants({ variant: "primary", size: "lg" })}>
+              <Link href={"/user/signup"} className={buttonVariants({ variant: "primary", size: "lg" })}>
                   Sign up for free
               </Link>
           </div>
@@ -125,12 +127,12 @@ export const Header = () => {
             <option>English</option>
             <option>Spanish</option>
           </select>
-          <button className="px-4 py-2 text-white bg-primary rounded-md">
+          <Link href="/user/signin" className="px-4 py-2 text-white bg-primary rounded-md">
             Log in
-          </button>
-          <button className="px-4 py-2 text-primary bg-secondary rounded-md">
+          </Link>
+          <Link href="/user/signup" className="px-4 py-2 text-primary bg-secondary rounded-md">
             Sign up for free
-          </button>
+          </Link>
         </div>
       )}
     </header>

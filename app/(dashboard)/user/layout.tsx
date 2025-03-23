@@ -1,4 +1,4 @@
-import { SidebarInset, SidebarProvider, SidebarTrigger, useSidebar } from "@/components/ui/sidebar"
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/app-sidebar"
 import { ResponsiveMenu } from "@/components/responsive-menu";
 import {
@@ -16,7 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import { Bell, ChevronDown, Grip, MessageCircle, MessageCircleMore } from "lucide-react";
+import { Bell, ChevronDown, Grip, MessageCircleMore } from "lucide-react";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
