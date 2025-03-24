@@ -20,7 +20,7 @@ const categories = [
   },
   {
     title: "Marketplace",
-    description: "With LinguaMura, discover new products and services in our marketplace.",
+    description: "With LinguaMura, discover new products and services in our marketplace shop with linguamura.",
     image: "/images/shopping-landing.png",
     action: "Marketplace",
     href: "/marketplace/Home",
@@ -54,7 +54,7 @@ export default function Page() {
       <div className="w-full h-[119px] bg-[#fff9e5] flex justify-center items-center">
         No Ads yet..
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-10 px-4 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-10 px-10 max-w-7xl mx-auto">
         {categories.map((category) => (
           <FeatureCard
             key={category.title}

@@ -129,7 +129,7 @@ const GamesPage = () => {
 
   return (
     <div>
-      <section className="w-full mb-4 mx-auto">
+      {/* <section className="w-full mb-4 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -138,7 +138,7 @@ const GamesPage = () => {
         >
           No Ads yet...
         </motion.div>
-      </section>
+      </section> */}
 
       <div>
         <BackButton />

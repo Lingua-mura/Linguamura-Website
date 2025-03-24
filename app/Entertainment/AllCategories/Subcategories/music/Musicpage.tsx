@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import BackButton from "@/components/ui/backbutton";
-import Layout from "@/app/Entertainment/Layout";
+// import Layout from "@/app/Entertainment/Layout";
 
 interface Artist {
   id: number;
@@ -215,10 +215,8 @@ const MusicPage = () => {
   const filteredPodcasts = filterContent(podcasts, "track");
 
   return (
-    <Layout>
-
     <div>
-      <section className="w-full mb-4 mx-auto">
+      {/* <section className="w-full mb-4 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -227,7 +225,7 @@ const MusicPage = () => {
         >
           No Ads yet...
         </motion.div>
-      </section>
+      </section> */}
 
       <div>
         <BackButton />
@@ -432,7 +430,7 @@ const MusicPage = () => {
         </div>
       )}
     </div>
-    </Layout>
+  
   );
 };
 
