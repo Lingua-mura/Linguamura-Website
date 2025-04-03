@@ -14,7 +14,8 @@ import {
   MoreVertical,
   Volume2
 } from "lucide-react";
-import Layout from "../../Layout";
+import Layout from "@/app/Entertainment/Layout";
+// import Layout from "../../Layout";
 
 const tracks = [
   { id: 1, title: "Song One", artist: "Artist One", duration: "3:45" },
