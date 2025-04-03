@@ -24,7 +24,7 @@ const page = () => {
         reviewCount={50}
         pricePerNight="NGN 15,000"
         mainImage="/housing/bedroom.png"
-        additionalImages={["/housing/bathroom.png", "/housing/kitchen.png","/housing/bedroom.png","/housing/kitchen.png"]}
+        additionalImages={["/housing/bathroom.png", "/housing/kitchen.png", "/housing/bedroom.png", "/housing/kitchen.png"]}
         host={{
           name: "Goldlux Hotel",
           image: "/housing/host-profile.png",
@@ -97,7 +97,7 @@ const page = () => {
       <div className="mt-10">
         <TopPicks apartments={apartmentData} />
       </div>
-      <AdBanner/>
+      <AdBanner />
     </div>
   );
 };

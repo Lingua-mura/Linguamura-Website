@@ -2,21 +2,13 @@
 "use client"
 
 import React, { useState } from 'react';
-import { Icon } from '@iconify/react';
-import Link from 'next/link';
-
-interface ApartmentData {
-  id: string;
-  title: string;
-  location: string;
-  price: string;
-  rating: number; // Out of 5
-  image: string;
-  isFavorite?: boolean;
-}
+// import { Icon } from '@iconify/react';
+// import Link from 'next/link';
+import { ProductData } from '@/app/types/health';
+import { ProductCard } from './HealthProductsDeals';
 
 interface TopPicksProps {
-  apartments: ApartmentData[];
+  products: ProductData[];
   title?: string;
   initialDisplayCount?: number;
   showMoreIncrement?: number;
@@ -24,16 +16,16 @@ interface TopPicksProps {
 }
 
 const TopPicks: React.FC<TopPicksProps> = ({ 
-  apartments, 
-  title = "Top Picks", 
+  products: products, 
+  title = "Result", 
   initialDisplayCount = 8,
   showMoreIncrement = 4,
-  starImageUrl = "/housing/star.png"
+  // starImageUrl = "/housing/star.png"
 }) => {
   const [displayCount, setDisplayCount] = useState(initialDisplayCount);
   const [favorites, setFavorites] = useState<Record<string, boolean>>({});
 
-  const toggleFavorite = (id: string) => {
+  const toggleFavorite = (id: string | number) => {
     setFavorites(prev => ({
       ...prev,
       [id]: !prev[id]
@@ -49,7 +41,10 @@ const TopPicks: React.FC<TopPicksProps> = ({
       <h2 className="text-3xl font-bold mb-6">{title}</h2>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {apartments.slice(0, displayCount).map((apartment) => (
+        {products.slice(0, displayCount).map((product, key) => (
+      <ProductCard  key={key} product={product} favorites={favorites} toggleFavorite={toggleFavorite}/>
+         ))}
+          {/* 
           <div 
             key={apartment.id} 
             className="bg-white rounded-[12px] overflow-hidden shadow-md no-underline"
@@ -72,9 +67,8 @@ const TopPicks: React.FC<TopPicksProps> = ({
                   className={favorites[apartment.id] ? "text-[#00BBBB]" : "text-[#A0A3BD]"}
                 />
               </button>
-            </div>
             
-            <Link href={`/housing/apartments/${apartment.id}`} passHref className='no-underline'>
+             <Link href={`/housing/products/${apartment.id}`} passHref className='no-underline'>
             <div className="p-4">
               <h3 className="text-lg font-semibold text-gray-800">{apartment.title}</h3>
               <p className="text-sm text-gray-500 mb-2">{apartment.location}</p>
@@ -97,10 +91,10 @@ const TopPicks: React.FC<TopPicksProps> = ({
             </div>
             </Link>
           </div>
-        ))}
+        ))} */}
       </div>
       
-      {displayCount < apartments.length && (
+      {displayCount < products.length && (
         <div className="flex justify-center mt-8">
           <button 
             onClick={handleShowMore}

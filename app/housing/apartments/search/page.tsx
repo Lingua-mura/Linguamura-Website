@@ -5,8 +5,8 @@ import React, { useState, useEffect } from 'react';
 import { Icon } from "@iconify/react";
 import { useRouter } from 'next/navigation';
 import HousingSearch from '../../_components/housing-search';
-import TopPicks from '../_components/TopPicks';
 import { apartmentData } from "../data"
+import TopPicks from '../_components/TopPicks';
 
 // Add this interface to your types or data file
 interface ApartmentData {
@@ -57,14 +57,14 @@ const SearchPage = () => {
   // Update handleSearch to apply filters
   const handleSearch = (searchData: { location: string; date: string; rooms: string }) => {
     const results = apartmentData.filter(apartment => {
-      const matchLocation = searchData.location ? 
-        apartment.location.toLowerCase().includes(searchData.location.toLowerCase()) : 
+      const matchLocation = searchData.location ?
+        apartment.location.toLowerCase().includes(searchData.location.toLowerCase()) :
         true;
-      
-      const matchRooms = searchData.rooms ? 
-        apartment.rooms === searchData.rooms : 
+
+      const matchRooms = searchData.rooms ?
+        apartment.rooms === searchData.rooms :
         true;
-      
+
       // Handle price range filtering
       let matchPrice = true;
       if (filters.priceRange) {
@@ -77,17 +77,17 @@ const SearchPage = () => {
         }
       }
 
-      const matchBedrooms = filters.bedrooms ? 
-        apartment.bedrooms === filters.bedrooms : 
+      const matchBedrooms = filters.bedrooms ?
+        apartment.bedrooms === filters.bedrooms :
         true;
 
-      const matchType = filters.propertyType ? 
-        apartment.type === filters.propertyType : 
+      const matchType = filters.propertyType ?
+        apartment.type === filters.propertyType :
         true;
 
       return matchLocation && matchRooms && matchPrice && matchBedrooms && matchType;
     });
-    
+
     setSearchResults(results);
   };
 
@@ -103,7 +103,7 @@ const SearchPage = () => {
   const handleBackClick = () => {
     router.back();
   };
-  
+
 
   return (
     <div>
@@ -112,14 +112,14 @@ const SearchPage = () => {
         tagline="Find the apartments that appeal to you the most"
         searchRoute="/housing/apartments/search"
         placeholder="Where are you going?"
-        // onSearch={handleSearch}
+      // onSearch={handleSearch}
       />
 
       <div className="container mb-10 md:px-4 flex flex-wrap justify-start items-center gap-4">
-              <button className="text-[#4E4B66]" onClick={handleBackClick}>
-                <Icon icon="bytesize:arrow-left" width={40} height={40} />
-              </button>
-            </div>
+        <button className="text-[#4E4B66]" onClick={handleBackClick}>
+          <Icon icon="bytesize:arrow-left" width={40} height={40} />
+        </button>
+      </div>
 
       {/* Filters Section */}
       {/* <div className="container mx-auto px-4 mt-8">
@@ -127,7 +127,7 @@ const SearchPage = () => {
           <h2 className="text-2xl text-[#00BBBB] font-bold mb-4">Filters</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             Price Range Filter */}
-            {/* <div>
+      {/* <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Price Range
               </label>
@@ -143,8 +143,8 @@ const SearchPage = () => {
               </select>
             </div> */}
 
-            {/* Bedrooms Filter */}
-            {/* <div>
+      {/* Bedrooms Filter */}
+      {/* <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Bedrooms
               </label>
@@ -160,8 +160,8 @@ const SearchPage = () => {
               </select>
             </div> */}
 
-            {/* Property Type Filter */}
-            {/* <div>
+      {/* Property Type Filter */}
+      {/* <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Property Type
               </label>
@@ -176,7 +176,7 @@ const SearchPage = () => {
                 <option value="house">House</option>
               </select>
             </div> */}
-          {/* </div>
+      {/* </div>
         </div>
       </div> */}
 
@@ -193,10 +193,10 @@ const SearchPage = () => {
           </>
         ) : (
           <div className="container mx-auto px-4 text-center py-12">
-            <Icon 
-              icon="mdi:house-search-outline" 
+            <Icon
+              icon="mdi:house-search-outline"
               className="mx-auto mb-4 text-gray-400"
-              width={48} 
+              width={48}
               height={48}
             />
             <p className="text-gray-600">No properties found matching your criteria</p>

@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import BackButton from "@/components/ui/backbutton";
 // import Layout from "@/app/Entertainment/Layout";
 
