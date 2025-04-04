@@ -15,8 +15,8 @@ const categories = [
     description:
       "With LinguaMura, you can take control of your health and wellness with personalized advice and tools.",
     image: "/images/health-landing.png",
-    action: "Control your health",
-    href: "/health",
+    action: "health",
+    href: "/user/health",
   },
   {
     title: "Marketplace",
