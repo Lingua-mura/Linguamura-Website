@@ -6,6 +6,7 @@ import { Icon } from '@iconify/react';
 
 import Image from 'next/image';
 import { HealthProductDealsProps, ProductData } from '@/app/types/health';
+import Link from 'next/link';
 
 
 const HealthProductsDeals: React.FC<HealthProductDealsProps> = ({
@@ -56,7 +57,7 @@ const HealthProductsDeals: React.FC<HealthProductDealsProps> = ({
         >
           <div className="flex gap-4 min-w-max pb-10">
             {products.map((product, index) => (
-              <ProductCard key={index} product={product} favorites={favorites} toggleFavorite={toggleFavorite} />
+              <ProductCard key={index + title} product={product} favorites={favorites} toggleFavorite={toggleFavorite} />
             ))}
           </div>
         </div>
@@ -80,7 +81,8 @@ export default HealthProductsDeals;
 
 export function ProductCard({ product, favorites, toggleFavorite }: { product: ProductData, favorites: Record<string, boolean>, toggleFavorite: (id: string | number) => void }) {
   return (
-    <div className="relative max-w-xs rounded-3xl bg-white p-4 shadow-lg">
+    <Link href={`/user/health/product/${product.id}`} className="no-underline">
+    <div className="relative max-w-xs rounded-3xl bg-white p-4 shadow-md">
       <button
         className="absolute top-3 right-3 bg-gray-200 p-1 rounded-[8px] shadow-md"
         onClick={() => toggleFavorite(product.id)}
@@ -121,6 +123,7 @@ export function ProductCard({ product, favorites, toggleFavorite }: { product: P
         </div>
       </div>
     </div>
+    </Link>
   )
 }
 

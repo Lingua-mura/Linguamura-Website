@@ -40,7 +40,7 @@ const TopPicks: React.FC<TopPicksProps> = ({
     <div className="container mx-auto py-8 px-4">
       <h2 className="text-3xl font-bold mb-6">{title}</h2>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {products.slice(0, displayCount).map((product, key) => (
       <ProductCard  key={key} product={product} favorites={favorites} toggleFavorite={toggleFavorite}/>
          ))}

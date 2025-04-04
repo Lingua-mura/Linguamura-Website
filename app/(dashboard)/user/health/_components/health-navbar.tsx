@@ -10,7 +10,7 @@ const HousingNavbar = () => {
   const pathname = usePathname();
 
   const links = [
-    { href: '#', label: 'Healt Marketplace', icon: 'solar:bag-2-line-duotone'},
+    { href: '/user/health/', label: 'Healt Marketplace', icon: 'solar:bag-2-line-duotone'},
     { href: '#', label: 'Health Facilities', icon: 'ph:building-apartment'  },
     { href: '#', label: 'Health Blog & Articles', icon: 'lets-icons:notebook', stroke: '2px' },
   ];
