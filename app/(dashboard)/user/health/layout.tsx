@@ -19,7 +19,7 @@
 // import { Bell, ChevronDown, Grip, MessageCircle, MessageCircleMore } from "lucide-react";
 // import Image from "next/image";
 // import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import HousingNavbar from './_components/housing-navbar';
+import HousingNavbar from './_components/health-navbar';
 
 // import "../globals.css";
 
